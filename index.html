@@ -1,0 +1,720 @@
+<!doctype html><html lang="ko"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>떠나가요 VS 이 사랑 - 시간별 반복재생 배수 대결</title>
+<meta property="og:title" content="떠나가요 vs 이 사랑">
+<meta property="og:description" content="발매 후 경과시간 기준 매시간 청취자/재생/배수 VS 비교">
+<style>
+:root{--bg:#070912;--panel:#111827;--line:#2b3b55;--text:#f4f7fb;--muted:#aab7c8;
+--tt:#ff7ab6;--tt2:#ff5d8f;--wd:#6ea8fe;--wd2:#3d7dff;
+--gold:#ffd166;--red:#ff5d73;--green:#55e6a5;--orange:#ff9f43}
+*{box-sizing:border-box}html,body{margin:0;padding:0}
+body{background:radial-gradient(circle at 16% 0%,#31466f55,transparent 40%),radial-gradient(circle at 84% 100%,#5b2f5544,transparent 40%),var(--bg);
+color:var(--text);font:14px/1.6 -apple-system,BlinkMacSystemFont,'Segoe UI','Apple SD Gothic Neo','Malgun Gothic',Arial,sans-serif;letter-spacing:-.01em}
+.wrap{max-width:1400px;margin:auto;padding:24px 20px 80px}
+.topbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px;color:var(--muted);font-size:12px}
+.tag{display:inline-block;padding:4px 10px;border-radius:999px;background:#1a2540;color:#cfe0ff;font-size:11px;margin-right:6px}
+.hero{position:relative;background:linear-gradient(135deg,#0f1830 0%,#180d22 100%);border:1px solid var(--line);border-radius:28px;padding:34px 28px;overflow:hidden;box-shadow:0 20px 60px #0009}
+.hero::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,var(--tt) 0%,var(--tt) 50%,var(--wd) 50%,var(--wd) 100%);opacity:.07;pointer-events:none}
+.vsgrid{display:grid;grid-template-columns:1fr 60px 1fr;gap:18px;align-items:center;position:relative;z-index:2}
+.side{padding:14px 6px}
+.side.tt{text-align:right}.side.wd{text-align:left}
+.side h2{margin:0;font-size:26px;font-weight:900;letter-spacing:-.04em;line-height:1.15}
+.side.tt h2{color:var(--tt)}.side.wd h2{color:var(--wd)}
+.side .sub{color:var(--muted);font-size:13px;margin-top:6px}
+.side .release{color:#cdd9eb;font-size:12px;margin-top:8px}
+.vs-mark{font-size:48px;font-weight:900;background:linear-gradient(135deg,var(--tt),var(--wd));-webkit-background-clip:text;-webkit-text-fill-color:transparent;text-align:center;line-height:1;text-shadow:0 0 30px #6ea8fe40}
+.scoreboard{display:grid;grid-template-columns:1fr auto 1fr;gap:18px;align-items:center;margin-top:24px;padding-top:24px;border-top:1px solid #1f2c47}
+.score{font-size:64px;font-weight:900;letter-spacing:-.06em;line-height:1}
+.score.tt{color:var(--tt);text-align:right}.score.wd{color:var(--wd);text-align:left}
+.score-label{color:var(--muted);font-size:12px;margin-top:2px}
+.dash{font-size:36px;color:#3a4a6b}
+.summary{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:18px}
+.card{background:#0e1424;border:1px solid var(--line);border-radius:18px;padding:16px}
+.card.tt{border-color:var(--tt);box-shadow:0 0 0 1px var(--tt) inset, 0 8px 22px #ff7ab622}
+.card.wd{border-color:var(--wd);box-shadow:0 0 0 1px var(--wd) inset, 0 8px 22px #6ea8fe22}
+.card .lbl{color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.05em}
+.card .val{font-size:24px;font-weight:850;margin-top:4px;letter-spacing:-.035em}
+.card .delta{font-size:11px;color:var(--muted);margin-top:3px}
+.card.tt .val{color:var(--tt)}.card.wd .val{color:var(--wd)}
+.section{margin-top:30px}
+.section-title{font-size:20px;font-weight:850;margin:0 0 14px;letter-spacing:-.03em}
+.section-title .em{color:var(--gold)}
+.subnote{color:var(--muted);font-size:12px;margin:-8px 0 14px}
+.charts{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.chart-box{background:#0d1422;border:1px solid var(--line);border-radius:18px;padding:14px}
+.chart-title{font-size:14px;font-weight:700;color:#dbe5f5;margin-bottom:6px}
+.chart-legend{color:var(--muted);font-size:12px;margin-top:4px}
+.lg-dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px;vertical-align:middle}
+.tbl-wrap{background:#0d1422;border:1px solid var(--line);border-radius:18px;overflow:auto;max-height:560px}
+table{border-collapse:separate;border-spacing:0;width:100%;min-width:760px}
+th,td{padding:8px 10px;border-bottom:1px solid #1f2c47;text-align:right;white-space:nowrap;font-size:12.5px}
+th{position:sticky;top:0;background:#16213a;color:#dbe5f5;font-weight:700;z-index:1}
+th:first-child,td:first-child{text-align:left;position:sticky;left:0;background:#0d1422;z-index:2}
+th:first-child{background:#16213a;z-index:3}
+tr:hover td{background:#152138}
+.win-tt{color:var(--tt);font-weight:850}
+.win-wd{color:var(--wd);font-weight:850}
+.win-tie{color:var(--gold);font-weight:700}
+.win-na{color:#556a8c}
+.pill{display:inline-block;padding:3px 9px;border-radius:999px;font-size:11px;font-weight:700}
+.pill.tt{background:rgba(255,122,182,.16);color:var(--tt)}
+.pill.wd{background:rgba(110,168,254,.16);color:var(--wd)}
+.pill.tie{background:rgba(255,209,102,.16);color:var(--gold)}
+.pill.muted{background:#1a2540;color:var(--muted)}
+.pill.ratio.hot{background:rgba(255,93,115,.18);color:var(--red)}
+.pill.ratio.high{background:rgba(255,159,67,.18);color:var(--orange)}
+.pill.ratio.mid{background:rgba(255,209,102,.18);color:var(--gold)}
+.pill.ratio.low{background:rgba(85,230,165,.18);color:var(--green)}
+.callout{background:linear-gradient(135deg,#1a2235,#141a2b);border:1px solid #2d3a59;border-radius:18px;padding:18px 20px;margin-top:18px;color:#dde7f7}
+.callout b{color:var(--gold)}
+.foot{color:#7a8aa6;font-size:11px;margin-top:24px;text-align:center}
+.foot a{color:#9dccff}
+@media(max-width:920px){.vsgrid{grid-template-columns:1fr}.summary{grid-template-columns:1fr 1fr}.charts{grid-template-columns:1fr}.scoreboard{grid-template-columns:1fr}.dash{display:none}.score.tt,.score.wd{text-align:center}}
+</style>
+</head><body><div class="wrap">
+<div class="topbar"><div><span class="tag">VS 비교 리포트</span><span class="tag">매시간 자동 갱신</span></div>
+<div>최근 갱신 2026-05-25 11:10 KST</div></div>
+<section class="hero">
+  <div class="vsgrid">
+    <div class="side tt">
+      <h2>떠나가요, 떠나지마요 : 시대를 초월한 마음</h2>
+      <div class="sub">순순희(기태), 백예슬</div>
+      <div class="release">발매 2026-04-26 18:00 KST · D+29일차</div>
+    </div>
+    <div class="vs-mark">VS</div>
+    <div class="side wd">
+      <h2>이 사랑</h2>
+      <div class="sub">우디 (Woody)</div>
+      <div class="release">발매 2026-05-24 18:00 KST · D+1일차</div>
+    </div>
+  </div>
+  <div class="scoreboard">
+    <div><div class="score tt">36</div><div class="score-label tt" style="text-align:right;color:var(--tt)">떠나가요 승</div></div>
+    <div class="dash">VS</div>
+    <div><div class="score wd">0</div><div class="score-label wd" style="text-align:left;color:var(--wd)">이 사랑 승</div></div>
+  </div>
+  <div style="text-align:center;color:var(--muted);font-size:12px;margin-top:6px">매시간 청취자·재생·배수 3개 항목 × 12시간 = 총 36회 대결</div>
+</section>
+<div class="summary">
+<div class="card tt"><div class="lbl">떠나가요 · 멜론 누적 청취자</div><div class="val">235,175</div><div class="delta">최신 D+28일차 · 누적 재생 2,060,623회</div></div>
+<div class="card tt"><div class="lbl">떠나가요 · 멜론 누적 배수</div><div class="val">8.76배</div><div class="delta">청취자 1명당 평균 재생 횟수</div></div>
+<div class="card wd"><div class="lbl">이 사랑 · 지니 누적 청취자</div><div class="val">6,374</div><div class="delta">최신 H+17시간 · 누적 재생 12,094회</div></div>
+<div class="card wd"><div class="lbl">이 사랑 · 지니 누적 배수</div><div class="val">1.90배</div><div class="delta">멜론은 발매 직후 비공개로 지니로 대체</div></div>
+</div>
+<div class="callout">
+<b>중간 판정:</b> 발매 후 같은 H+N 시점 기준 매시간 대결에서 <b>떠나가요 우세</b>입니다.
+떠나가요이 12회 청취자 우위, 12회 재생 우위, 12회 배수 우위.
+이 사랑이 0회 청취자 우위, 0회 재생 우위, 0회 배수 우위.
+</div>
+<section class="section">
+<h2 class="section-title">📊 플랫폼별 데일리 추이</h2>
+<p class="subnote">x축: 발매 후 경과일 D+N · 같은 D+N 시점에서 두 곡의 흐름 비교 · 이사랑은 D+1 진행 중</p>
+<div class="charts">
+<div class="chart-box"><div class="chart-title">멜론 누적 청취자 (이사랑은 멜론 데이터 비공개)</div>
+<svg viewBox="0 0 920 260" xmlns="http://www.w3.org/2000/svg">
+<rect x="0" y="0" width="920" height="260" fill="#0d1422"/>
+<line x1="44" y1="216.0" x2="876" y2="216.0" stroke="#1c2840" stroke-dasharray="3 5"/><text x="38" y="220.0" fill="#aab7c8" font-size="11" text-anchor="end">10,683</text><line x1="44" y1="173.0" x2="876" y2="173.0" stroke="#1c2840" stroke-dasharray="3 5"/><text x="38" y="177.0" fill="#aab7c8" font-size="11" text-anchor="end">66,806</text><line x1="44" y1="130.0" x2="876" y2="130.0" stroke="#1c2840" stroke-dasharray="3 5"/><text x="38" y="134.0" fill="#aab7c8" font-size="11" text-anchor="end">122,929</text><line x1="44" y1="87.0" x2="876" y2="87.0" stroke="#1c2840" stroke-dasharray="3 5"/><text x="38" y="91.0" fill="#aab7c8" font-size="11" text-anchor="end">179,052</text><line x1="44" y1="44.0" x2="876" y2="44.0" stroke="#1c2840" stroke-dasharray="3 5"/><text x="38" y="48.0" fill="#aab7c8" font-size="11" text-anchor="end">235,175</text>
+<line x1="44.0" y1="216" x2="44.0" y2="221" stroke="#2b3b55"/><text x="44.0" y="234" fill="#aab7c8" font-size="11" text-anchor="middle">D+1</text><line x1="252.0" y1="216" x2="252.0" y2="221" stroke="#2b3b55"/><text x="252.0" y="234" fill="#aab7c8" font-size="11" text-anchor="middle">D+7</text><line x1="460.0" y1="216" x2="460.0" y2="221" stroke="#2b3b55"/><text x="460.0" y="234" fill="#aab7c8" font-size="11" text-anchor="middle">D+14</text><line x1="668.0" y1="216" x2="668.0" y2="221" stroke="#2b3b55"/><text x="668.0" y="234" fill="#aab7c8" font-size="11" text-anchor="middle">D+21</text><line x1="876.0" y1="216" x2="876.0" y2="221" stroke="#2b3b55"/><text x="876.0" y="234" fill="#aab7c8" font-size="11" text-anchor="middle">D+28</text>
+<line x1="44" y1="44" x2="44" y2="216" stroke="#2b3b55"/>
+<line x1="44" y1="216" x2="876" y2="216" stroke="#2b3b55"/>
+<path d="M44.0,216.0 L74.8,196.0 L105.6,184.9 L136.4,175.8 L167.3,167.6 L198.1,160.0 L228.9,152.9 L259.7,146.8 L290.5,139.0 L321.3,133.5 L352.1,127.0 L383.0,120.9 L413.8,114.1 L444.6,107.8 L475.4,103.7 L506.2,98.5 L537.0,93.6 L567.9,88.7 L598.7,83.6 L629.5,78.4 L660.3,73.9 L691.1,69.8 L721.9,65.5 L752.7,61.4 L783.6,57.4 L814.4,53.4 L845.2,48.7 L876.0,44.0" fill="none" stroke="#ff7ab6" stroke-width="2.5" stroke-linejoin="round"/>
+<path d="" fill="none" stroke="#6ea8fe" stroke-width="2.5" stroke-linejoin="round"/>
+</svg>
+<div class="chart-legend"><span class="lg-dot" style="background:#ff7ab6"></span>떠나가요
+<span class="lg-dot" style="background:#6ea8fe;margin-left:14px"></span>이 사랑</div>
+</div>
+<div class="chart-box"><div class="chart-title">멜론 누적 재생 수 (이사랑은 멜론 데이터 비공개)</div>
+<svg viewBox="0 0 920 260" xmlns="http://www.w3.org/2000/svg">
+<rect x="0" y="0" width="920" height="260" fill="#0d1422"/>
+<line x1="44" y1="216.0" x2="876" y2="216.0" stroke="#1c2840" stroke-dasharray="3 5"/><text x="38" y="220.0" fill="#aab7c8" font-size="11" text-anchor="end">22,664</text><line x1="44" y1="173.0" x2="876" y2="173.0" stroke="#1c2840" stroke-dasharray="3 5"/><text x="38" y="177.0" fill="#aab7c8" font-size="11" text-anchor="end">532,153</text><line x1="44" y1="130.0" x2="876" y2="130.0" stroke="#1c2840" stroke-dasharray="3 5"/><text x="38" y="134.0" fill="#aab7c8" font-size="11" text-anchor="end">1,041,643</text><line x1="44" y1="87.0" x2="876" y2="87.0" stroke="#1c2840" stroke-dasharray="3 5"/><text x="38" y="91.0" fill="#aab7c8" font-size="11" text-anchor="end">1,551,133</text><line x1="44" y1="44.0" x2="876" y2="44.0" stroke="#1c2840" stroke-dasharray="3 5"/><text x="38" y="48.0" fill="#aab7c8" font-size="11" text-anchor="end">2,060,623</text>
+<line x1="44.0" y1="216" x2="44.0" y2="221" stroke="#2b3b55"/><text x="44.0" y="234" fill="#aab7c8" font-size="11" text-anchor="middle">D+1</text><line x1="252.0" y1="216" x2="252.0" y2="221" stroke="#2b3b55"/><text x="252.0" y="234" fill="#aab7c8" font-size="11" text-anchor="middle">D+7</text><line x1="460.0" y1="216" x2="460.0" y2="221" stroke="#2b3b55"/><text x="460.0" y="234" fill="#aab7c8" font-size="11" text-anchor="middle">D+14</text><line x1="668.0" y1="216" x2="668.0" y2="221" stroke="#2b3b55"/><text x="668.0" y="234" fill="#aab7c8" font-size="11" text-anchor="middle">D+21</text><line x1="876.0" y1="216" x2="876.0" y2="221" stroke="#2b3b55"/><text x="876.0" y="234" fill="#aab7c8" font-size="11" text-anchor="middle">D+28</text>
+<line x1="44" y1="44" x2="44" y2="216" stroke="#2b3b55"/>
+<line x1="44" y1="216" x2="876" y2="216" stroke="#2b3b55"/>
+<path d="M44.0,216.0 L74.8,207.9 L105.6,200.3 L136.4,192.9 L167.3,185.3 L198.1,179.0 L228.9,172.8 L259.7,167.3 L290.5,159.9 L321.3,153.8 L352.1,146.6 L383.0,139.5 L413.8,132.0 L444.6,125.4 L475.4,120.0 L506.2,113.5 L537.0,107.1 L567.9,100.8 L598.7,94.5 L629.5,88.1 L660.3,82.4 L691.1,77.7 L721.9,72.0 L752.7,66.6 L783.6,61.2 L814.4,55.7 L845.2,49.6 L876.0,44.0" fill="none" stroke="#ff7ab6" stroke-width="2.5" stroke-linejoin="round"/>
+<path d="" fill="none" stroke="#6ea8fe" stroke-width="2.5" stroke-linejoin="round"/>
+</svg>
+<div class="chart-legend"><span class="lg-dot" style="background:#ff7ab6"></span>떠나가요
+<span class="lg-dot" style="background:#6ea8fe;margin-left:14px"></span>이 사랑</div>
+</div>
+</div><div class="charts" style="margin-top:14px">
+<div class="chart-box"><div class="chart-title">지니 누적 청취자 (발매 후 48시간)</div>
+<svg viewBox="0 0 920 260" xmlns="http://www.w3.org/2000/svg">
+<rect x="0" y="0" width="920" height="260" fill="#0d1422"/>
+<line x1="44" y1="216.0" x2="876" y2="216.0" stroke="#1c2840" stroke-dasharray="3 5"/><text x="38" y="220.0" fill="#aab7c8" font-size="11" text-anchor="end">615</text><line x1="44" y1="173.0" x2="876" y2="173.0" stroke="#1c2840" stroke-dasharray="3 5"/><text x="38" y="177.0" fill="#aab7c8" font-size="11" text-anchor="end">6,850</text><line x1="44" y1="130.0" x2="876" y2="130.0" stroke="#1c2840" stroke-dasharray="3 5"/><text x="38" y="134.0" fill="#aab7c8" font-size="11" text-anchor="end">13,086</text><line x1="44" y1="87.0" x2="876" y2="87.0" stroke="#1c2840" stroke-dasharray="3 5"/><text x="38" y="91.0" fill="#aab7c8" font-size="11" text-anchor="end">19,321</text><line x1="44" y1="44.0" x2="876" y2="44.0" stroke="#1c2840" stroke-dasharray="3 5"/><text x="38" y="48.0" fill="#aab7c8" font-size="11" text-anchor="end">25,557</text>
+<line x1="44.0" y1="216" x2="44.0" y2="221" stroke="#2b3b55"/><text x="44.0" y="234" fill="#aab7c8" font-size="11" text-anchor="middle">H+1</text><line x1="252.0" y1="216" x2="252.0" y2="221" stroke="#2b3b55"/><text x="252.0" y="234" fill="#aab7c8" font-size="11" text-anchor="middle">H+12</text><line x1="460.0" y1="216" x2="460.0" y2="221" stroke="#2b3b55"/><text x="460.0" y="234" fill="#aab7c8" font-size="11" text-anchor="middle">H+24</text><line x1="668.0" y1="216" x2="668.0" y2="221" stroke="#2b3b55"/><text x="668.0" y="234" fill="#aab7c8" font-size="11" text-anchor="middle">H+36</text><line x1="876.0" y1="216" x2="876.0" y2="221" stroke="#2b3b55"/><text x="876.0" y="234" fill="#aab7c8" font-size="11" text-anchor="middle">H+48</text>
+<line x1="44" y1="44" x2="44" y2="216" stroke="#2b3b55"/>
+<line x1="44" y1="216" x2="876" y2="216" stroke="#2b3b55"/>
+<path d="M44.0,211.5 L61.7,203.9 L79.4,197.1 L97.1,190.9 L114.8,185.9 L132.5,182.3 L150.2,179.8 L256.4,167.0 L274.1,154.5 L291.8,140.9 L309.5,132.6 L327.2,126.1 L344.9,120.5 L362.6,116.9 L380.3,113.5 L398.0,110.3 L415.7,107.2 L433.4,103.7 L451.1,99.4 L468.9,95.3 L486.6,92.1 L504.3,89.5 L522.0,87.0 L539.7,85.2 L557.4,83.5 L575.1,82.3 L681.3,77.7 L699.0,74.1 L716.7,69.3 L734.4,66.3 L752.1,63.6 L769.8,61.1 L787.5,58.7 L805.2,56.1 L822.9,53.5 L840.6,50.8 L858.3,47.5 L876.0,44.0" fill="none" stroke="#ff7ab6" stroke-width="2.5" stroke-linejoin="round"/>
+<path d="M44.0,216.0 L61.7,212.0 L79.4,208.0 L97.1,204.4 L114.8,201.1 L132.5,198.6 L150.2,196.8 L256.4,191.0 L274.1,188.2 L291.8,184.5 L309.5,180.6 L327.2,176.3" fill="none" stroke="#6ea8fe" stroke-width="2.5" stroke-linejoin="round"/>
+</svg>
+<div class="chart-legend"><span class="lg-dot" style="background:#ff7ab6"></span>떠나가요
+<span class="lg-dot" style="background:#6ea8fe;margin-left:14px"></span>이 사랑</div>
+</div>
+<div class="chart-box"><div class="chart-title">지니 누적 반복재생 배수 (발매 후 48시간)</div>
+<svg viewBox="0 0 920 260" xmlns="http://www.w3.org/2000/svg">
+<rect x="0" y="0" width="920" height="260" fill="#0d1422"/>
+<line x1="44" y1="216.0" x2="876" y2="216.0" stroke="#1c2840" stroke-dasharray="3 5"/><text x="38" y="220.0" fill="#aab7c8" font-size="11" text-anchor="end">1.34</text><line x1="44" y1="173.0" x2="876" y2="173.0" stroke="#1c2840" stroke-dasharray="3 5"/><text x="38" y="177.0" fill="#aab7c8" font-size="11" text-anchor="end">1.87</text><line x1="44" y1="130.0" x2="876" y2="130.0" stroke="#1c2840" stroke-dasharray="3 5"/><text x="38" y="134.0" fill="#aab7c8" font-size="11" text-anchor="end">2.40</text><line x1="44" y1="87.0" x2="876" y2="87.0" stroke="#1c2840" stroke-dasharray="3 5"/><text x="38" y="91.0" fill="#aab7c8" font-size="11" text-anchor="end">2.92</text><line x1="44" y1="44.0" x2="876" y2="44.0" stroke="#1c2840" stroke-dasharray="3 5"/><text x="38" y="48.0" fill="#aab7c8" font-size="11" text-anchor="end">3.45</text>
+<line x1="44.0" y1="216" x2="44.0" y2="221" stroke="#2b3b55"/><text x="44.0" y="234" fill="#aab7c8" font-size="11" text-anchor="middle">H+1</text><line x1="252.0" y1="216" x2="252.0" y2="221" stroke="#2b3b55"/><text x="252.0" y="234" fill="#aab7c8" font-size="11" text-anchor="middle">H+12</text><line x1="460.0" y1="216" x2="460.0" y2="221" stroke="#2b3b55"/><text x="460.0" y="234" fill="#aab7c8" font-size="11" text-anchor="middle">H+24</text><line x1="668.0" y1="216" x2="668.0" y2="221" stroke="#2b3b55"/><text x="668.0" y="234" fill="#aab7c8" font-size="11" text-anchor="middle">H+36</text><line x1="876.0" y1="216" x2="876.0" y2="221" stroke="#2b3b55"/><text x="876.0" y="234" fill="#aab7c8" font-size="11" text-anchor="middle">H+48</text>
+<line x1="44" y1="44" x2="44" y2="216" stroke="#2b3b55"/>
+<line x1="44" y1="216" x2="876" y2="216" stroke="#2b3b55"/>
+<path d="M44.0,205.8 L61.7,192.5 L79.4,184.3 L97.1,178.2 L114.8,173.1 L132.5,168.1 L150.2,162.7 L256.4,140.5 L274.1,144.0 L291.8,143.8 L309.5,142.4 L327.2,140.0 L344.9,137.9 L362.6,133.7 L380.3,129.4 L398.0,124.9 L415.7,120.9 L433.4,116.5 L451.1,112.5 L468.9,106.9 L486.6,103.0 L504.3,99.3 L522.0,96.7 L539.7,94.4 L557.4,93.0 L575.1,91.3 L681.3,79.2 L699.0,74.1 L716.7,68.6 L734.4,64.5 L752.1,62.0 L769.8,59.3 L787.5,56.5 L805.2,53.2 L822.9,50.5 L840.6,48.1 L858.3,46.7 L876.0,44.0" fill="none" stroke="#ff7ab6" stroke-width="2.5" stroke-linejoin="round"/>
+<path d="M44.0,216.0 L61.7,207.5 L79.4,204.8 L97.1,201.9 L114.8,198.5 L132.5,194.2 L150.2,191.9 L256.4,172.8 L274.1,171.7 L291.8,171.1 L309.5,170.3 L327.2,170.7" fill="none" stroke="#6ea8fe" stroke-width="2.5" stroke-linejoin="round"/>
+</svg>
+<div class="chart-legend"><span class="lg-dot" style="background:#ff7ab6"></span>떠나가요
+<span class="lg-dot" style="background:#6ea8fe;margin-left:14px"></span>이 사랑</div>
+</div>
+</div></section>
+<section class="section">
+<h2 class="section-title">⚔️ 발매 후 매시간 VS 결과 <span class="em">(지니 기준)</span></h2>
+<p class="subnote">같은 H+N(발매 후 경과시간) 시점에서 청취자/재생/누적배수/순위를 비교. 색이 진한 쪽이 그 항목 승자.</p>
+<div class="tbl-wrap"><table>
+<thead><tr>
+<th>경과</th>
+<th>떠나가요<br>청취자</th><th>이 사랑<br>청취자</th><th>승</th>
+<th>떠나가요<br>재생</th><th>이 사랑<br>재생</th><th>승</th>
+<th>떠나가요<br>누적배수</th><th>이 사랑<br>누적배수</th><th>승</th>
+<th>떠나가요<br>순위</th><th>이 사랑<br>순위</th><th>승</th>
+</tr></thead><tbody>
+<tr>
+<td>H+1</td>
+<td class="win-tt">1,261</td>
+<td class="win-na">615</td>
+<td><span class="pill tt">떠나가요</span></td>
+<td class="win-tt">1,850</td>
+<td class="win-na">825</td>
+<td><span class="pill tt">떠나가요</span></td>
+<td class="win-tt"><span class="pill ratio low">1.47배</span></td>
+<td class="win-na"><span class="pill ratio low">1.34배</span></td>
+<td><span class="pill tt">떠나가요</span></td>
+<td class="win-tt">127</td>
+<td class="win-na">245</td>
+<td><span class="pill tt">떠나가요</span></td>
+</tr>
+<tr>
+<td>H+2</td>
+<td class="win-tt">2,363</td>
+<td class="win-na">1,195</td>
+<td><span class="pill tt">떠나가요</span></td>
+<td class="win-tt">3,851</td>
+<td class="win-na">1,727</td>
+<td><span class="pill tt">떠나가요</span></td>
+<td class="win-tt"><span class="pill ratio low">1.63배</span></td>
+<td class="win-na"><span class="pill ratio low">1.45배</span></td>
+<td><span class="pill tt">떠나가요</span></td>
+<td class="win-tt">83</td>
+<td class="win-na">218</td>
+<td><span class="pill tt">떠나가요</span></td>
+</tr>
+<tr>
+<td>H+3</td>
+<td class="win-tt">3,356</td>
+<td class="win-na">1,781</td>
+<td><span class="pill tt">떠나가요</span></td>
+<td class="win-tt">5,809</td>
+<td class="win-na">2,633</td>
+<td><span class="pill tt">떠나가요</span></td>
+<td class="win-tt"><span class="pill ratio low">1.73배</span></td>
+<td class="win-na"><span class="pill ratio low">1.48배</span></td>
+<td><span class="pill tt">떠나가요</span></td>
+<td class="win-tt">71</td>
+<td class="win-na">174</td>
+<td><span class="pill tt">떠나가요</span></td>
+</tr>
+<tr>
+<td>H+4</td>
+<td class="win-tt">4,250</td>
+<td class="win-na">2,304</td>
+<td><span class="pill tt">떠나가요</span></td>
+<td class="win-tt">7,670</td>
+<td class="win-na">3,490</td>
+<td><span class="pill tt">떠나가요</span></td>
+<td class="win-tt"><span class="pill ratio mid">1.80배</span></td>
+<td class="win-na"><span class="pill ratio low">1.51배</span></td>
+<td><span class="pill tt">떠나가요</span></td>
+<td class="win-tt">55</td>
+<td class="win-na">152</td>
+<td><span class="pill tt">떠나가요</span></td>
+</tr>
+<tr>
+<td>H+5</td>
+<td class="win-tt">4,975</td>
+<td class="win-na">2,775</td>
+<td><span class="pill tt">떠나가요</span></td>
+<td class="win-tt">9,294</td>
+<td class="win-na">4,318</td>
+<td><span class="pill tt">떠나가요</span></td>
+<td class="win-tt"><span class="pill ratio mid">1.87배</span></td>
+<td class="win-na"><span class="pill ratio low">1.56배</span></td>
+<td><span class="pill tt">떠나가요</span></td>
+<td class="win-tt">42</td>
+<td class="win-na">144</td>
+<td><span class="pill tt">떠나가요</span></td>
+</tr>
+<tr>
+<td>H+6</td>
+<td class="win-tt">5,495</td>
+<td class="win-na">3,144</td>
+<td><span class="pill tt">떠나가요</span></td>
+<td class="win-tt">10,599</td>
+<td class="win-na">5,058</td>
+<td><span class="pill tt">떠나가요</span></td>
+<td class="win-tt"><span class="pill ratio mid">1.93배</span></td>
+<td class="win-na"><span class="pill ratio low">1.61배</span></td>
+<td><span class="pill tt">떠나가요</span></td>
+<td class="win-tt">44</td>
+<td class="win-na">114</td>
+<td><span class="pill tt">떠나가요</span></td>
+</tr>
+<tr>
+<td>H+7</td>
+<td class="win-tt">5,861</td>
+<td class="win-na">3,405</td>
+<td><span class="pill tt">떠나가요</span></td>
+<td class="win-tt">11,693</td>
+<td class="win-na">5,573</td>
+<td><span class="pill tt">떠나가요</span></td>
+<td class="win-tt"><span class="pill ratio mid">2.00배</span></td>
+<td class="win-na"><span class="pill ratio low">1.64배</span></td>
+<td><span class="pill tt">떠나가요</span></td>
+<td class="win-tt">44</td>
+<td class="win-na">93</td>
+<td><span class="pill tt">떠나가요</span></td>
+</tr>
+<tr>
+<td>H+13</td>
+<td class="win-tt">7,722</td>
+<td class="win-na">4,238</td>
+<td><span class="pill tt">떠나가요</span></td>
+<td class="win-tt">17,511</td>
+<td class="win-na">7,929</td>
+<td><span class="pill tt">떠나가요</span></td>
+<td class="win-tt"><span class="pill ratio high">2.27배</span></td>
+<td class="win-na"><span class="pill ratio mid">1.87배</span></td>
+<td><span class="pill tt">떠나가요</span></td>
+<td class="win-tt">35</td>
+<td class="win-na">103</td>
+<td><span class="pill tt">떠나가요</span></td>
+</tr>
+<tr>
+<td>H+14</td>
+<td class="win-tt">9,538</td>
+<td class="win-na">4,649</td>
+<td><span class="pill tt">떠나가요</span></td>
+<td class="win-tt">21,225</td>
+<td class="win-na">8,765</td>
+<td><span class="pill tt">떠나가요</span></td>
+<td class="win-tt"><span class="pill ratio high">2.23배</span></td>
+<td class="win-na"><span class="pill ratio mid">1.89배</span></td>
+<td><span class="pill tt">떠나가요</span></td>
+<td class="win-tt">25</td>
+<td class="win-na">85</td>
+<td><span class="pill tt">떠나가요</span></td>
+</tr>
+<tr>
+<td>H+15</td>
+<td class="win-tt">11,500</td>
+<td class="win-na">5,176</td>
+<td><span class="pill tt">떠나가요</span></td>
+<td class="win-tt">25,609</td>
+<td class="win-na">9,794</td>
+<td><span class="pill tt">떠나가요</span></td>
+<td class="win-tt"><span class="pill ratio high">2.23배</span></td>
+<td class="win-na"><span class="pill ratio mid">1.89배</span></td>
+<td><span class="pill tt">떠나가요</span></td>
+<td class="win-tt">29</td>
+<td class="win-na">93</td>
+<td><span class="pill tt">떠나가요</span></td>
+</tr>
+<tr>
+<td>H+16</td>
+<td class="win-tt">12,713</td>
+<td class="win-na">5,749</td>
+<td><span class="pill tt">떠나가요</span></td>
+<td class="win-tt">28,536</td>
+<td class="win-na">10,933</td>
+<td><span class="pill tt">떠나가요</span></td>
+<td class="win-tt"><span class="pill ratio high">2.24배</span></td>
+<td class="win-na"><span class="pill ratio mid">1.90배</span></td>
+<td><span class="pill tt">떠나가요</span></td>
+<td class="win-tt">39</td>
+<td class="win-na">100</td>
+<td><span class="pill tt">떠나가요</span></td>
+</tr>
+<tr>
+<td>H+17</td>
+<td class="win-tt">13,648</td>
+<td class="win-na">6,374</td>
+<td><span class="pill tt">떠나가요</span></td>
+<td class="win-tt">31,025</td>
+<td class="win-na">12,094</td>
+<td><span class="pill tt">떠나가요</span></td>
+<td class="win-tt"><span class="pill ratio high">2.27배</span></td>
+<td class="win-na"><span class="pill ratio mid">1.90배</span></td>
+<td><span class="pill tt">떠나가요</span></td>
+<td class="win-tt">68</td>
+<td class="win-na">138</td>
+<td><span class="pill tt">떠나가요</span></td>
+</tr>
+</tbody></table></div></section>
+<section class="section">
+<h2 class="section-title">📅 떠나가요 28일 일별 풀데이터 <span class="em">(멜론)</span></h2>
+<p class="subnote">이 사랑은 발매 직후라 비교할 일별 데이터가 아직 없습니다. 이사랑이 D+28까지 가면 이 표를 나란히 채울 예정.</p>
+<div class="tbl-wrap"><table>
+<thead><tr><th>날짜</th><th>D+</th><th>멜론 순위</th><th>일간 이용자수</th><th>누적 청취자</th><th>누적 재생</th><th>누적 배수</th><th>일별 청취자 증가</th><th>일별 재생 증가</th><th>일별 배수</th></tr></thead>
+<tbody>
+<tr>
+<td>2026-05-24</td><td>D+28</td>
+<td>-</td>
+<td>-</td>
+<td>235,175</td>
+<td>2,060,623</td>
+<td><span class="pill ratio hot">8.76배</span></td>
+<td>235,175</td>
+<td>2,060,623</td>
+<td><span class="pill ratio hot">8.76배</span></td>
+</tr>
+<tr>
+<td>2026-05-23</td><td>D+27</td>
+<td>-</td>
+<td>-</td>
+<td>229,083</td>
+<td>1,993,876</td>
+<td><span class="pill ratio hot">8.70배</span></td>
+<td>6,227</td>
+<td>72,310</td>
+<td><span class="pill ratio hot">11.61배</span></td>
+</tr>
+<tr>
+<td>2026-05-22</td><td>D+26</td>
+<td>95</td>
+<td>38,112</td>
+<td>222,856</td>
+<td>1,921,566</td>
+<td><span class="pill ratio hot">8.62배</span></td>
+<td>5,219</td>
+<td>65,203</td>
+<td><span class="pill ratio hot">12.49배</span></td>
+</tr>
+<tr>
+<td>2026-05-21</td><td>D+25</td>
+<td>95</td>
+<td>36,924</td>
+<td>217,637</td>
+<td>1,856,363</td>
+<td><span class="pill ratio hot">8.53배</span></td>
+<td>5,225</td>
+<td>63,093</td>
+<td><span class="pill ratio hot">12.08배</span></td>
+</tr>
+<tr>
+<td>2026-05-20</td><td>D+24</td>
+<td>95</td>
+<td>34,865</td>
+<td>212,412</td>
+<td>1,793,270</td>
+<td><span class="pill ratio hot">8.44배</span></td>
+<td>5,294</td>
+<td>64,759</td>
+<td><span class="pill ratio hot">12.23배</span></td>
+</tr>
+<tr>
+<td>2026-05-19</td><td>D+23</td>
+<td>98</td>
+<td>35,879</td>
+<td>207,118</td>
+<td>1,728,511</td>
+<td><span class="pill ratio hot">8.35배</span></td>
+<td>5,682</td>
+<td>67,184</td>
+<td><span class="pill ratio hot">11.82배</span></td>
+</tr>
+<tr>
+<td>2026-05-18</td><td>D+22</td>
+<td>94</td>
+<td>36,810</td>
+<td>201,436</td>
+<td>1,661,327</td>
+<td><span class="pill ratio hot">8.25배</span></td>
+<td>5,224</td>
+<td>56,238</td>
+<td><span class="pill ratio hot">10.77배</span></td>
+</tr>
+<tr>
+<td>2026-05-17</td><td>D+21</td>
+<td>93</td>
+<td>35,375</td>
+<td>196,212</td>
+<td>1,605,089</td>
+<td><span class="pill ratio hot">8.18배</span></td>
+<td>5,954</td>
+<td>66,718</td>
+<td><span class="pill ratio hot">11.21배</span></td>
+</tr>
+<tr>
+<td>2026-05-16</td><td>D+20</td>
+<td>97</td>
+<td>33,530</td>
+<td>190,258</td>
+<td>1,538,371</td>
+<td><span class="pill ratio hot">8.09배</span></td>
+<td>6,742</td>
+<td>75,588</td>
+<td><span class="pill ratio hot">11.21배</span></td>
+</tr>
+<tr>
+<td>2026-05-15</td><td>D+19</td>
+<td>97</td>
+<td>37,859</td>
+<td>183,516</td>
+<td>1,462,783</td>
+<td><span class="pill ratio hot">7.97배</span></td>
+<td>6,656</td>
+<td>74,683</td>
+<td><span class="pill ratio hot">11.22배</span></td>
+</tr>
+<tr>
+<td>2026-05-14</td><td>D+18</td>
+<td>97</td>
+<td>38,529</td>
+<td>176,860</td>
+<td>1,388,100</td>
+<td><span class="pill ratio hot">7.85배</span></td>
+<td>6,463</td>
+<td>75,222</td>
+<td><span class="pill ratio hot">11.64배</span></td>
+</tr>
+<tr>
+<td>2026-05-13</td><td>D+17</td>
+<td>97</td>
+<td>37,896</td>
+<td>170,397</td>
+<td>1,312,878</td>
+<td><span class="pill ratio hot">7.70배</span></td>
+<td>6,294</td>
+<td>75,209</td>
+<td><span class="pill ratio hot">11.95배</span></td>
+</tr>
+<tr>
+<td>2026-05-12</td><td>D+16</td>
+<td>97</td>
+<td>37,540</td>
+<td>164,103</td>
+<td>1,237,669</td>
+<td><span class="pill ratio hot">7.54배</span></td>
+<td>6,898</td>
+<td>78,051</td>
+<td><span class="pill ratio hot">11.32배</span></td>
+</tr>
+<tr>
+<td>2026-05-11</td><td>D+15</td>
+<td>96</td>
+<td>37,542</td>
+<td>157,205</td>
+<td>1,159,618</td>
+<td><span class="pill ratio hot">7.38배</span></td>
+<td>5,353</td>
+<td>63,206</td>
+<td><span class="pill ratio hot">11.81배</span></td>
+</tr>
+<tr>
+<td>2026-05-10</td><td>D+14</td>
+<td>94</td>
+<td>35,413</td>
+<td>151,852</td>
+<td>1,096,412</td>
+<td><span class="pill ratio hot">7.22배</span></td>
+<td>8,171</td>
+<td>78,874</td>
+<td><span class="pill ratio hot">9.65배</span></td>
+</tr>
+<tr>
+<td>2026-05-09</td><td>D+13</td>
+<td>95</td>
+<td>35,162</td>
+<td>143,681</td>
+<td>1,017,538</td>
+<td><span class="pill ratio hot">7.08배</span></td>
+<td>8,863</td>
+<td>88,825</td>
+<td><span class="pill ratio hot">10.02배</span></td>
+</tr>
+<tr>
+<td>2026-05-08</td><td>D+12</td>
+<td>96</td>
+<td>39,220</td>
+<td>134,818</td>
+<td>928,713</td>
+<td><span class="pill ratio hot">6.89배</span></td>
+<td>8,002</td>
+<td>84,069</td>
+<td><span class="pill ratio hot">10.51배</span></td>
+</tr>
+<tr>
+<td>2026-05-07</td><td>D+11</td>
+<td>97</td>
+<td>38,200</td>
+<td>126,816</td>
+<td>844,644</td>
+<td><span class="pill ratio hot">6.66배</span></td>
+<td>8,429</td>
+<td>85,376</td>
+<td><span class="pill ratio hot">10.13배</span></td>
+</tr>
+<tr>
+<td>2026-05-06</td><td>D+10</td>
+<td>98</td>
+<td>37,258</td>
+<td>118,387</td>
+<td>759,268</td>
+<td><span class="pill ratio hot">6.41배</span></td>
+<td>7,183</td>
+<td>71,762</td>
+<td><span class="pill ratio hot">9.99배</span></td>
+</tr>
+<tr>
+<td>2026-05-05</td><td>D+9</td>
+<td>100</td>
+<td>35,138</td>
+<td>111,204</td>
+<td>687,506</td>
+<td><span class="pill ratio hot">6.18배</span></td>
+<td>10,186</td>
+<td>87,250</td>
+<td><span class="pill ratio hot">8.57배</span></td>
+</tr>
+<tr>
+<td>2026-05-04</td><td>D+8</td>
+<td>99</td>
+<td>34,552</td>
+<td>101,018</td>
+<td>600,256</td>
+<td><span class="pill ratio hot">5.94배</span></td>
+<td>8,042</td>
+<td>65,900</td>
+<td><span class="pill ratio hot">8.19배</span></td>
+</tr>
+<tr>
+<td>2026-05-03</td><td>D+7</td>
+<td>101</td>
+<td>33,039</td>
+<td>92,976</td>
+<td>534,356</td>
+<td><span class="pill ratio hot">5.75배</span></td>
+<td>9,165</td>
+<td>73,396</td>
+<td><span class="pill ratio hot">8.01배</span></td>
+</tr>
+<tr>
+<td>2026-05-02</td><td>D+6</td>
+<td>119</td>
+<td>29,398</td>
+<td>83,811</td>
+<td>460,960</td>
+<td><span class="pill ratio hot">5.50배</span></td>
+<td>9,960</td>
+<td>75,049</td>
+<td><span class="pill ratio hot">7.54배</span></td>
+</tr>
+<tr>
+<td>2026-05-01</td><td>D+5</td>
+<td>124</td>
+<td>31,198</td>
+<td>73,851</td>
+<td>385,911</td>
+<td><span class="pill ratio hot">5.23배</span></td>
+<td>10,684</td>
+<td>89,029</td>
+<td><span class="pill ratio hot">8.33배</span></td>
+</tr>
+<tr>
+<td>2026-04-30</td><td>D+4</td>
+<td>127</td>
+<td>31,657</td>
+<td>63,167</td>
+<td>296,882</td>
+<td><span class="pill ratio hot">4.70배</span></td>
+<td>11,840</td>
+<td>88,363</td>
+<td><span class="pill ratio hot">7.46배</span></td>
+</tr>
+<tr>
+<td>2026-04-29</td><td>D+3</td>
+<td>128</td>
+<td>31,708</td>
+<td>51,327</td>
+<td>208,519</td>
+<td><span class="pill ratio hot">4.06배</span></td>
+<td>14,515</td>
+<td>90,208</td>
+<td><span class="pill ratio hot">6.21배</span></td>
+</tr>
+<tr>
+<td>2026-04-28</td><td>D+2</td>
+<td>129</td>
+<td>30,453</td>
+<td>36,812</td>
+<td>118,311</td>
+<td><span class="pill ratio hot">3.21배</span></td>
+<td>26,129</td>
+<td>95,647</td>
+<td><span class="pill ratio hot">3.66배</span></td>
+</tr>
+<tr>
+<td>2026-04-27</td><td>D+1</td>
+<td>131</td>
+<td>29,789</td>
+<td>10,683</td>
+<td>22,664</td>
+<td><span class="pill ratio high">2.12배</span></td>
+<td>10,683</td>
+<td>22,664</td>
+<td><span class="pill ratio high">2.12배</span></td>
+</tr>
+</tbody></table></div></section>
+<section class="section">
+<h2 class="section-title">📺 유튜브 누적 조회수 스냅샷</h2>
+<p class="subnote">떠나가요의 공개 검색 결과 상위 영상. 이 사랑의 유튜브 데이터는 D+1 시점에서 별도 수집 예정.</p>
+<div class="summary" style="grid-template-columns:repeat(3,1fr)">
+<div class="card tt"><div class="lbl">떠나가요 · 유튜브 영상 수</div><div class="val">10개</div><div class="delta">공개 검색 기준</div></div>
+<div class="card tt"><div class="lbl">떠나가요 · 누적 조회수 합</div><div class="val">1,321,985</div><div class="delta">관련 영상 전체</div></div>
+<div class="card wd"><div class="lbl">이 사랑 · 유튜브</div><div class="val">수집 대기</div><div class="delta">발매 직후</div></div>
+</div>
+<div class="tbl-wrap" style="margin-top:12px"><table>
+<thead><tr><th>영상</th><th>조회수</th><th>업로드일</th><th>채널</th></tr></thead><tbody>
+<tr>
+<td style="text-align:left;max-width:560px;white-space:normal"><a href="https://www.youtube.com/watch?v=aYP1jFT6r58" style="color:#9dccff" target="_blank">[MV]떠나가요, 떠나지마요 - 순순희(기태), 백예슬 : 시대를 초월한 마음</a></td>
+<td>421,713</td>
+<td>20260405</td>
+<td style="text-align:left">기태 (순순희) GITAE OFFICIAL</td>
+</tr>
+<tr>
+<td style="text-align:left;max-width:560px;white-space:normal"><a href="https://www.youtube.com/watch?v=FRB9DFA2Log" style="color:#9dccff" target="_blank">이누야샤 매드무비 - 떠나가요, 떠나지마요 : 시대를 초월한 마음 - 순순희(기태), 백예슬 Inuyasha MV</a></td>
+<td>321,129</td>
+<td>20260407</td>
+<td style="text-align:left">기태 (순순희) GITAE OFFICIAL</td>
+</tr>
+<tr>
+<td style="text-align:left;max-width:560px;white-space:normal"><a href="https://www.youtube.com/watch?v=oUL9PKQuiFE" style="color:#9dccff" target="_blank">[OFFICIAL MV] 떠나가요, 떠나지마요:시대를 초월한 마음 - 순순희(기태), 백예슬</a></td>
+<td>200,556</td>
+<td>20260426</td>
+<td style="text-align:left">기태 (순순희) GITAE OFFICIAL</td>
+</tr>
+<tr>
+<td style="text-align:left;max-width:560px;white-space:normal"><a href="https://www.youtube.com/watch?v=FDWFZY41FHo" style="color:#9dccff" target="_blank">[MV] &#x27;떠나가요, 떠나지마요&#x27; - 순순희(기태), 백예슬 : 시대를 초월한 마음｜노래하는 신혼부부 (4월 26일 음원발매)</a></td>
+<td>153,894</td>
+<td>20260406</td>
+<td style="text-align:left">기태 (순순희) GITAE OFFICIAL</td>
+</tr>
+<tr>
+<td style="text-align:left;max-width:560px;white-space:normal"><a href="https://www.youtube.com/watch?v=5jJHSlcimt8" style="color:#9dccff" target="_blank">순순희(기태) , 백예슬 - 떠나가요, 떠나지마요 / Kpop / Lyrics / 가사</a></td>
+<td>75,790</td>
+<td>20260426</td>
+<td style="text-align:left">NN Music</td>
+</tr>
+</tbody></table></div></section>
+<div class="foot">
+데이터 출처: 멜론 일간/스트리밍 카드 · 지니 실시간/일간 차트 · 유튜브 검색 API ·
+산식: 반복재생 배수 = 누적 재생 ÷ 누적 청취자 ·
+페이지는 매시간 자동 빌드 + GitHub Pages 자동 배포 ·
+빌드 시각 2026-05-25 11:10:28 KST
+</div></div></body></html>
