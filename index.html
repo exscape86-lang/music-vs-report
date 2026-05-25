@@ -11,7 +11,7 @@
 <style>
 :root{
   --bg:#06080F;--bg-2:#0A0E1A;--panel:#0E1320;--panel-2:#121829;--panel-3:#181F33;
-  --line:#1D2740;--line-2:#283555;--ink:#F2F5FB;--ink-2:#CAD3E5;--muted:#8896B0;--muted-2:#5C6A87;
+  --line:#1D2740;--line-2:#283555;--ink:#F2F5FB;--ink-2:#CAD3E5;--muted:#8896B0;--muted-2:#7384A4;
   --tt:#ff7ab6;--tt2:#ff3d8a;--tt-soft:rgba(255,122,182,.10);--tt-glow:rgba(255,122,182,.18);
   --wd:#6ea8fe;--wd2:#3d7dff;--wd-soft:rgba(110,168,254,.10);--wd-glow:rgba(110,168,254,.18);
   --gold:#F4C46C;--red:#FF6B7E;--green:#5FE6B0;--orange:#FFA64D;
@@ -174,11 +174,17 @@ tbody tr:hover td.wd-side{background:linear-gradient(270deg,rgba(110,168,254,.08
 
 /* VS center marker in row */
 .vs-cell{text-align:center;padding:8px 4px !important}
-.vs-arrow{display:inline-flex;align-items:center;justify-content:center;gap:0;min-width:54px;height:26px;border-radius:8px;font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.04em;border:1px solid var(--line);background:var(--panel-2);color:var(--muted)}
-.vs-arrow.tt{background:linear-gradient(90deg,var(--tt-soft),transparent);border-color:rgba(255,122,182,.4);color:var(--tt);box-shadow:inset 2px 0 0 var(--tt)}
-.vs-arrow.wd{background:linear-gradient(270deg,var(--wd-soft),transparent);border-color:rgba(110,168,254,.4);color:var(--wd);box-shadow:inset -2px 0 0 var(--wd)}
+.vs-arrow{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-width:72px;height:30px;padding:0 10px;border-radius:9px;font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.04em;border:1px solid var(--line);background:var(--panel-2);color:var(--muted)}
+.vs-arrow.tt{background:linear-gradient(90deg,var(--tt-soft),transparent);border-color:rgba(255,122,182,.42);color:var(--tt);box-shadow:inset 2px 0 0 var(--tt)}
+.vs-arrow.tt-strong{background:linear-gradient(90deg,rgba(255,122,182,.30),rgba(255,122,182,.06));border-color:var(--tt);color:#FFE0EF;box-shadow:inset 3px 0 0 var(--tt),0 0 18px rgba(255,122,182,.18)}
+.vs-arrow.wd{background:linear-gradient(270deg,var(--wd-soft),transparent);border-color:rgba(110,168,254,.42);color:var(--wd);box-shadow:inset -2px 0 0 var(--wd)}
+.vs-arrow.wd-strong{background:linear-gradient(270deg,rgba(110,168,254,.30),rgba(110,168,254,.06));border-color:var(--wd);color:#E2EDFF;box-shadow:inset -3px 0 0 var(--wd),0 0 18px rgba(110,168,254,.18)}
+.vs-arrow.split{color:var(--ink-2);border-color:rgba(160,180,210,.30);background:rgba(160,180,210,.05)}
 .vs-arrow.tie{color:var(--gold);border-color:rgba(244,196,108,.4);background:rgba(244,196,108,.06)}
-.vs-arrow .arr{font-size:13px;line-height:1}
+.vs-arrow .arr{font-size:14px;line-height:1;font-weight:700}
+.vs-arrow .vs-score{font-size:11.5px;font-variant-numeric:tabular-nums;font-weight:800;opacity:.95}
+.vs-arrow .vs-dash{margin:0 2px;opacity:.6}
+.sweep-mark{display:inline-block;margin-right:6px;color:var(--gold);font-size:10px;line-height:1;vertical-align:1px}
 
 /* DIFF PILLS */
 .diff{display:inline-block;padding:3px 10px;border-radius:6px;font-family:var(--mono);font-size:11.5px;font-weight:700;font-variant-numeric:tabular-nums;letter-spacing:.005em;border:1px solid transparent}
@@ -247,7 +253,7 @@ tbody tr:hover td.wd-side{background:linear-gradient(270deg,rgba(110,168,254,.08
   </div>
   <div class="meta">
     <span><span class="live-dot"></span>LIVE</span>
-    <span>UPDATED · 2026-05-25 12:26 KST</span>
+    <span>UPDATED · 2026-05-25 12:41 KST</span>
   </div>
 </header>
 
@@ -343,77 +349,77 @@ tbody tr:hover td.wd-side{background:linear-gradient(270deg,rgba(110,168,254,.08
 </tr>
 </thead><tbody>
 <tr>
-<td class="center"><div class="tcell-time"><span class="dt">04/26 19:00</span><span class="rel">H+1</span></div></td>
+<td class="center"><div class="tcell-time"><span class="sweep-mark" title="3-0 완승">★</span><span class="dt">04/26 19:00</span><span class="rel">H+1</span></div></td>
 <td class="cell-num tt-side cell-tt-win">+1,261</td>
 <td class="cell-num tt-side cell-tt-win">+1,850</td>
 <td class="tt-side divide-r"><span class="pill-mult low">1.47×</span></td>
-<td class="vs-cell"><div class="vs-arrow tt"><span class="arr">←</span></div></td>
+<td class="vs-cell"><div class="vs-arrow tt-strong"><span class="arr">←</span><span class="vs-score">3<span class="vs-dash">·</span>0</span></div></td>
 <td class="cell-num cell-faded">+615</td>
 <td class="cell-num cell-faded">+825</td>
 <td class=""><span class="pill-mult low">1.34×</span></td>
 <td class="center"><span class="diff tt">+1,025</span></td>
 </tr>
 <tr>
-<td class="center"><div class="tcell-time"><span class="dt">04/26 20:00</span><span class="rel">H+2</span></div></td>
+<td class="center"><div class="tcell-time"><span class="sweep-mark" title="3-0 완승">★</span><span class="dt">04/26 20:00</span><span class="rel">H+2</span></div></td>
 <td class="cell-num tt-side cell-tt-win">+1,102</td>
 <td class="cell-num tt-side cell-tt-win">+2,001</td>
 <td class="tt-side divide-r"><span class="pill-mult mid">1.82×</span></td>
-<td class="vs-cell"><div class="vs-arrow tt"><span class="arr">←</span></div></td>
+<td class="vs-cell"><div class="vs-arrow tt-strong"><span class="arr">←</span><span class="vs-score">3<span class="vs-dash">·</span>0</span></div></td>
 <td class="cell-num cell-faded">+580</td>
 <td class="cell-num cell-faded">+902</td>
 <td class=""><span class="pill-mult low">1.56×</span></td>
 <td class="center"><span class="diff tt">+1,099</span></td>
 </tr>
 <tr>
-<td class="center"><div class="tcell-time"><span class="dt">04/26 21:00</span><span class="rel">H+3</span></div></td>
+<td class="center"><div class="tcell-time"><span class="sweep-mark" title="3-0 완승">★</span><span class="dt">04/26 21:00</span><span class="rel">H+3</span></div></td>
 <td class="cell-num tt-side cell-tt-win">+993</td>
 <td class="cell-num tt-side cell-tt-win">+1,958</td>
 <td class="tt-side divide-r"><span class="pill-mult mid">1.97×</span></td>
-<td class="vs-cell"><div class="vs-arrow tt"><span class="arr">←</span></div></td>
+<td class="vs-cell"><div class="vs-arrow tt-strong"><span class="arr">←</span><span class="vs-score">3<span class="vs-dash">·</span>0</span></div></td>
 <td class="cell-num cell-faded">+586</td>
 <td class="cell-num cell-faded">+906</td>
 <td class=""><span class="pill-mult low">1.55×</span></td>
 <td class="center"><span class="diff tt">+1,052</span></td>
 </tr>
 <tr>
-<td class="center"><div class="tcell-time"><span class="dt">04/26 22:00</span><span class="rel">H+4</span></div></td>
+<td class="center"><div class="tcell-time"><span class="sweep-mark" title="3-0 완승">★</span><span class="dt">04/26 22:00</span><span class="rel">H+4</span></div></td>
 <td class="cell-num tt-side cell-tt-win">+894</td>
 <td class="cell-num tt-side cell-tt-win">+1,861</td>
 <td class="tt-side divide-r"><span class="pill-mult high">2.08×</span></td>
-<td class="vs-cell"><div class="vs-arrow tt"><span class="arr">←</span></div></td>
+<td class="vs-cell"><div class="vs-arrow tt-strong"><span class="arr">←</span><span class="vs-score">3<span class="vs-dash">·</span>0</span></div></td>
 <td class="cell-num cell-faded">+523</td>
 <td class="cell-num cell-faded">+857</td>
 <td class=""><span class="pill-mult low">1.64×</span></td>
 <td class="center"><span class="diff tt">+1,004</span></td>
 </tr>
 <tr>
-<td class="center"><div class="tcell-time"><span class="dt">04/26 23:00</span><span class="rel">H+5</span></div></td>
+<td class="center"><div class="tcell-time"><span class="sweep-mark" title="3-0 완승">★</span><span class="dt">04/26 23:00</span><span class="rel">H+5</span></div></td>
 <td class="cell-num tt-side cell-tt-win">+725</td>
 <td class="cell-num tt-side cell-tt-win">+1,624</td>
 <td class="tt-side divide-r"><span class="pill-mult high">2.24×</span></td>
-<td class="vs-cell"><div class="vs-arrow tt"><span class="arr">←</span></div></td>
+<td class="vs-cell"><div class="vs-arrow tt-strong"><span class="arr">←</span><span class="vs-score">3<span class="vs-dash">·</span>0</span></div></td>
 <td class="cell-num cell-faded">+471</td>
 <td class="cell-num cell-faded">+828</td>
 <td class=""><span class="pill-mult low">1.76×</span></td>
 <td class="center"><span class="diff tt">+796</span></td>
 </tr>
 <tr>
-<td class="center"><div class="tcell-time"><span class="dt">04/27 00:00</span><span class="rel">H+6</span></div></td>
+<td class="center"><div class="tcell-time"><span class="sweep-mark" title="3-0 완승">★</span><span class="dt">04/27 00:00</span><span class="rel">H+6</span></div></td>
 <td class="cell-num tt-side cell-tt-win">+520</td>
 <td class="cell-num tt-side cell-tt-win">+1,305</td>
 <td class="tt-side divide-r"><span class="pill-mult high">2.51×</span></td>
-<td class="vs-cell"><div class="vs-arrow tt"><span class="arr">←</span></div></td>
+<td class="vs-cell"><div class="vs-arrow tt-strong"><span class="arr">←</span><span class="vs-score">3<span class="vs-dash">·</span>0</span></div></td>
 <td class="cell-num cell-faded">+369</td>
 <td class="cell-num cell-faded">+740</td>
 <td class=""><span class="pill-mult high">2.01×</span></td>
 <td class="center"><span class="diff tt">+565</span></td>
 </tr>
 <tr>
-<td class="center"><div class="tcell-time"><span class="dt">04/27 01:00</span><span class="rel">H+7</span></div></td>
+<td class="center"><div class="tcell-time"><span class="sweep-mark" title="3-0 완승">★</span><span class="dt">04/27 01:00</span><span class="rel">H+7</span></div></td>
 <td class="cell-num tt-side cell-tt-win">+366</td>
 <td class="cell-num tt-side cell-tt-win">+1,094</td>
 <td class="tt-side divide-r"><span class="pill-mult hot">2.99×</span></td>
-<td class="vs-cell"><div class="vs-arrow tt"><span class="arr">←</span></div></td>
+<td class="vs-cell"><div class="vs-arrow tt-strong"><span class="arr">←</span><span class="vs-score">3<span class="vs-dash">·</span>0</span></div></td>
 <td class="cell-num cell-faded">+261</td>
 <td class="cell-num cell-faded">+515</td>
 <td class=""><span class="pill-mult mid">1.97×</span></td>
@@ -421,65 +427,65 @@ tbody tr:hover td.wd-side{background:linear-gradient(270deg,rgba(110,168,254,.08
 </tr>
 <tr>
 <td class="center"><div class="tcell-time"><span class="dt">04/27 07:00</span><span class="rel">H+13</span></div></td>
-<td class="cell-num tt-side cell-tt-win">+894</td>
-<td class="cell-num tt-side cell-faded">+2,017</td>
-<td class="tt-side divide-r"><span class="pill-mult high">2.26×</span></td>
-<td class="vs-cell"><div class="vs-arrow tt"><span class="arr">←</span></div></td>
-<td class="cell-num cell-faded">+833</td>
-<td class="cell-num cell-wd-win">+2,356</td>
-<td class=""><span class="pill-mult hot">2.83×</span></td>
+<td class="cell-num cell-tt-win">+894</td>
+<td class="cell-num cell-faded">+2,017</td>
+<td class=" divide-r"><span class="pill-mult high">2.26×</span></td>
+<td class="vs-cell"><div class="vs-arrow wd"><span class="arr">→</span><span class="vs-score">1<span class="vs-dash">·</span>2</span></div></td>
+<td class="cell-num wd-side cell-faded">+833</td>
+<td class="cell-num wd-side cell-wd-win">+2,356</td>
+<td class="wd-side"><span class="pill-mult hot">2.83×</span></td>
 <td class="center"><span class="diff wd">-339</span></td>
 </tr>
 <tr>
-<td class="center"><div class="tcell-time"><span class="dt">04/27 08:00</span><span class="rel">H+14</span></div></td>
+<td class="center"><div class="tcell-time"><span class="sweep-mark" title="3-0 완승">★</span><span class="dt">04/27 08:00</span><span class="rel">H+14</span></div></td>
 <td class="cell-num tt-side cell-tt-win">+1,816</td>
 <td class="cell-num tt-side cell-tt-win">+3,714</td>
 <td class="tt-side divide-r"><span class="pill-mult high">2.05×</span></td>
-<td class="vs-cell"><div class="vs-arrow tt"><span class="arr">←</span></div></td>
+<td class="vs-cell"><div class="vs-arrow tt-strong"><span class="arr">←</span><span class="vs-score">3<span class="vs-dash">·</span>0</span></div></td>
 <td class="cell-num cell-faded">+411</td>
 <td class="cell-num cell-faded">+836</td>
 <td class=""><span class="pill-mult high">2.03×</span></td>
 <td class="center"><span class="diff tt">+2,878</span></td>
 </tr>
 <tr>
-<td class="center"><div class="tcell-time"><span class="dt">04/27 09:00</span><span class="rel">H+15</span></div></td>
+<td class="center"><div class="tcell-time"><span class="sweep-mark" title="3-0 완승">★</span><span class="dt">04/27 09:00</span><span class="rel">H+15</span></div></td>
 <td class="cell-num tt-side cell-tt-win">+1,962</td>
 <td class="cell-num tt-side cell-tt-win">+4,384</td>
 <td class="tt-side divide-r"><span class="pill-mult high">2.23×</span></td>
-<td class="vs-cell"><div class="vs-arrow tt"><span class="arr">←</span></div></td>
+<td class="vs-cell"><div class="vs-arrow tt-strong"><span class="arr">←</span><span class="vs-score">3<span class="vs-dash">·</span>0</span></div></td>
 <td class="cell-num cell-faded">+527</td>
 <td class="cell-num cell-faded">+1,029</td>
 <td class=""><span class="pill-mult mid">1.95×</span></td>
 <td class="center"><span class="diff tt">+3,355</span></td>
 </tr>
 <tr>
-<td class="center"><div class="tcell-time"><span class="dt">04/27 10:00</span><span class="rel">H+16</span></div></td>
+<td class="center"><div class="tcell-time"><span class="sweep-mark" title="3-0 완승">★</span><span class="dt">04/27 10:00</span><span class="rel">H+16</span></div></td>
 <td class="cell-num tt-side cell-tt-win">+1,213</td>
 <td class="cell-num tt-side cell-tt-win">+2,927</td>
 <td class="tt-side divide-r"><span class="pill-mult high">2.41×</span></td>
-<td class="vs-cell"><div class="vs-arrow tt"><span class="arr">←</span></div></td>
+<td class="vs-cell"><div class="vs-arrow tt-strong"><span class="arr">←</span><span class="vs-score">3<span class="vs-dash">·</span>0</span></div></td>
 <td class="cell-num cell-faded">+573</td>
 <td class="cell-num cell-faded">+1,139</td>
 <td class=""><span class="pill-mult mid">1.99×</span></td>
 <td class="center"><span class="diff tt">+1,788</span></td>
 </tr>
 <tr>
-<td class="center"><div class="tcell-time"><span class="dt">04/27 11:00</span><span class="rel">H+17</span></div></td>
+<td class="center"><div class="tcell-time"><span class="sweep-mark" title="3-0 완승">★</span><span class="dt">04/27 11:00</span><span class="rel">H+17</span></div></td>
 <td class="cell-num tt-side cell-tt-win">+935</td>
 <td class="cell-num tt-side cell-tt-win">+2,489</td>
 <td class="tt-side divide-r"><span class="pill-mult hot">2.66×</span></td>
-<td class="vs-cell"><div class="vs-arrow tt"><span class="arr">←</span></div></td>
+<td class="vs-cell"><div class="vs-arrow tt-strong"><span class="arr">←</span><span class="vs-score">3<span class="vs-dash">·</span>0</span></div></td>
 <td class="cell-num cell-faded">+625</td>
 <td class="cell-num cell-faded">+1,161</td>
 <td class=""><span class="pill-mult mid">1.86×</span></td>
 <td class="center"><span class="diff tt">+1,328</span></td>
 </tr>
 <tr>
-<td class="center"><div class="tcell-time"><span class="dt">04/27 12:00</span><span class="rel">H+18</span></div></td>
+<td class="center"><div class="tcell-time"><span class="sweep-mark" title="3-0 완승">★</span><span class="dt">04/27 12:00</span><span class="rel">H+18</span></div></td>
 <td class="cell-num tt-side cell-tt-win">+813</td>
 <td class="cell-num tt-side cell-tt-win">+2,235</td>
 <td class="tt-side divide-r"><span class="pill-mult hot">2.75×</span></td>
-<td class="vs-cell"><div class="vs-arrow tt"><span class="arr">←</span></div></td>
+<td class="vs-cell"><div class="vs-arrow tt-strong"><span class="arr">←</span><span class="vs-score">3<span class="vs-dash">·</span>0</span></div></td>
 <td class="cell-num cell-faded">+607</td>
 <td class="cell-num cell-faded">+1,188</td>
 <td class=""><span class="pill-mult mid">1.96×</span></td>
@@ -950,7 +956,7 @@ tbody tr:hover td.wd-side{background:linear-gradient(270deg,rgba(110,168,254,.08
 <footer class="foot">
 <div class="row">
 <div><b>산식</b> · 매시간 1시간 동안 늘어난 청취자/재생 증가분 직접 매칭 · 시간배수 = 시간 재생 증가 ÷ 시간 청취자 증가</div>
-<div><b>BUILD</b> · 2026-05-25 12:26:58 KST</div>
+<div><b>BUILD</b> · 2026-05-25 12:41:22 KST</div>
 </div>
 <div class="row" style="margin-top:6px">
 <div><b>SOURCES</b> · 멜론 일간/스트리밍 카드 · 지니 실시간 차트 · 유튜브 검색 API · 매시간 자동 빌드 → GitHub 자동 배포</div>
