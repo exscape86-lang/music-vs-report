@@ -1,0 +1,91 @@
+<svg
+  viewBox="0 0 1600 600"
+  xmlns="http://www.w3.org/2000/svg"
+  preserveAspectRatio="none"
+  aria-hidden="true"
+>
+  <defs>
+    <radialGradient id="centerPurple" cx="50%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="#8b5cf6" stop-opacity="0.42"/>
+      <stop offset="38%" stop-color="#6ea8fe" stop-opacity="0.12"/>
+      <stop offset="70%" stop-color="#06080F" stop-opacity="0"/>
+    </radialGradient>
+
+    <linearGradient id="splitGlow" x1="0%" y1="50%" x2="100%" y2="50%">
+      <stop offset="0%" stop-color="#ff7ab6" stop-opacity="0.34"/>
+      <stop offset="42%" stop-color="#ff7ab6" stop-opacity="0.08"/>
+      <stop offset="50%" stop-color="#a855f7" stop-opacity="0.28"/>
+      <stop offset="58%" stop-color="#6ea8fe" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#6ea8fe" stop-opacity="0.34"/>
+    </linearGradient>
+
+    <filter id="noise">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncA type="table" tableValues="0 0.09"/>
+      </feComponentTransfer>
+    </filter>
+
+    <filter id="softBlur">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="600" fill="#06080F"/>
+  <rect width="1600" height="600" fill="url(#splitGlow)"/>
+  <rect width="1600" height="600" fill="url(#centerPurple)"/>
+
+  <g filter="url(#softBlur)" opacity="0.55">
+    <ellipse cx="230" cy="300" rx="360" ry="150" fill="#ff7ab6" opacity="0.12"/>
+    <ellipse cx="1370" cy="300" rx="360" ry="150" fill="#6ea8fe" opacity="0.12"/>
+  </g>
+
+  <g fill="none" stroke-linecap="round">
+    <path d="M0 345 C220 270 360 390 560 315 C670 275 730 280 800 300"
+          stroke="#ff7ab6" stroke-opacity="0.28" stroke-width="1.5"/>
+    <path d="M0 395 C230 320 390 430 590 355 C690 318 745 320 800 300"
+          stroke="#ff7ab6" stroke-opacity="0.16" stroke-width="1"/>
+    <path d="M0 295 C200 240 340 360 540 285 C650 248 715 252 800 300"
+          stroke="#ff7ab6" stroke-opacity="0.10" stroke-width="0.8"/>
+
+    <path d="M1600 255 C1380 330 1240 210 1040 285 C930 325 870 320 800 300"
+          stroke="#6ea8fe" stroke-opacity="0.30" stroke-width="1.5"/>
+    <path d="M1600 205 C1370 280 1210 170 1010 245 C910 282 855 280 800 300"
+          stroke="#6ea8fe" stroke-opacity="0.16" stroke-width="1"/>
+    <path d="M1600 305 C1390 370 1260 250 1060 320 C950 358 885 350 800 300"
+          stroke="#6ea8fe" stroke-opacity="0.10" stroke-width="0.8"/>
+  </g>
+
+  <!-- chart grid lines subtle -->
+  <g stroke="#ffffff" stroke-opacity="0.03" stroke-width="0.5">
+    <line x1="0" y1="150" x2="1600" y2="150"/>
+    <line x1="0" y1="300" x2="1600" y2="300"/>
+    <line x1="0" y1="450" x2="1600" y2="450"/>
+    <line x1="400" y1="0" x2="400" y2="600"/>
+    <line x1="800" y1="0" x2="800" y2="600"/>
+    <line x1="1200" y1="0" x2="1200" y2="600"/>
+  </g>
+
+  <!-- star particles -->
+  <g opacity="0.40">
+    <circle cx="145" cy="115" r="1.4" fill="#ff7ab6"/>
+    <circle cx="260" cy="455" r="1.1" fill="#ff7ab6"/>
+    <circle cx="80"  cy="310" r="0.8" fill="#ff7ab6"/>
+    <circle cx="340" cy="200" r="1.0" fill="#ff7ab6"/>
+    <circle cx="410" cy="180" r="0.9" fill="#ffffff"/>
+    <circle cx="520" cy="490" r="0.7" fill="#ffffff"/>
+    <circle cx="640" cy="410" r="1.0" fill="#a855f7"/>
+    <circle cx="760" cy="80"  r="0.8" fill="#a855f7"/>
+    <circle cx="840" cy="520" r="0.9" fill="#a855f7"/>
+    <circle cx="955" cy="160" r="1.0" fill="#a855f7"/>
+    <circle cx="1070" cy="470" r="0.8" fill="#6ea8fe"/>
+    <circle cx="1180" cy="430" r="1.2" fill="#6ea8fe"/>
+    <circle cx="1290" cy="90"  r="1.0" fill="#6ea8fe"/>
+    <circle cx="1365" cy="125" r="1.4" fill="#6ea8fe"/>
+    <circle cx="1485" cy="365" r="0.9" fill="#ffffff"/>
+    <circle cx="1560" cy="210" r="1.1" fill="#6ea8fe"/>
+  </g>
+
+  <rect width="1600" height="600" filter="url(#noise)" opacity="0.55"/>
+</svg>
