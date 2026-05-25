@@ -179,6 +179,8 @@ tbody tr:hover td.wd-side{background:linear-gradient(270deg,rgba(110,168,254,.08
 .tcell-time{display:flex;flex-direction:column;gap:2px}
 .tcell-time .dt{font-family:var(--mono);font-size:12.5px;color:var(--ink);font-weight:600;letter-spacing:.005em}
 .tcell-time .rel{font-size:10.5px;color:var(--muted);font-family:var(--mono);letter-spacing:.02em}
+.tcell-time .ref{font-size:10px;color:var(--muted-2);font-family:var(--mono);letter-spacing:.02em;margin-top:1px}
+.tcell-time .ref::before{content:"↳ ";opacity:.6}
 
 /* VS center marker in row */
 .vs-cell{text-align:center;padding:8px 4px !important}
@@ -261,7 +263,7 @@ tbody tr:hover td.wd-side{background:linear-gradient(270deg,rgba(110,168,254,.08
   </div>
   <div class="meta">
     <span><span class="live-dot"></span>LIVE</span>
-    <span>UPDATED · 2026-05-25 13:22 KST</span>
+    <span>UPDATED · 2026-05-25 13:39 KST</span>
   </div>
 </header>
 
@@ -346,7 +348,7 @@ tbody tr:hover td.wd-side{background:linear-gradient(270deg,rgba(110,168,254,.08
 <div class="tbl-wrap"><table>
 <thead>
 <tr>
-<th rowspan="2" class="center">시각<br>(KST)</th>
+<th rowspan="2" class="center">시각<br><span style="font-weight:600;color:var(--wd);font-size:10.5px">(이 사랑 기준)</span></th>
 <th colspan="3" class="center col-tt-h divide-r">떠나가요 증가</th>
 <th rowspan="2" class="center">청취자<br>승자</th>
 <th colspan="3" class="center col-wd-h">이 사랑 증가</th>
@@ -358,7 +360,7 @@ tbody tr:hover td.wd-side{background:linear-gradient(270deg,rgba(110,168,254,.08
 </tr>
 </thead><tbody>
 <tr>
-<td class="center"><div class="tcell-time"><span class="sweep-mark" title="3-0 완승">★</span><span class="dt">04/27 13:00</span><span class="rel">H+19</span></div></td>
+<td class="center"><div class="tcell-time"><span class="sweep-mark" title="3-0 완승">★</span><span class="dt">05/25 13:00</span><span class="rel">H+19</span><span class="ref">04/27 13:00 떠나가요</span></div></td>
 <td class="cell-num tt-side cell-tt-win">+526</td>
 <td class="cell-num tt-side cell-tt-win">+1,967</td>
 <td class="tt-side divide-r"><span class="pill-mult hot">3.74×</span></td>
@@ -369,7 +371,7 @@ tbody tr:hover td.wd-side{background:linear-gradient(270deg,rgba(110,168,254,.08
 <td class="center"><span class="diff tt">+1,013</span></td>
 </tr>
 <tr>
-<td class="center"><div class="tcell-time"><span class="sweep-mark" title="3-0 완승">★</span><span class="dt">04/27 12:00</span><span class="rel">H+18</span></div></td>
+<td class="center"><div class="tcell-time"><span class="sweep-mark" title="3-0 완승">★</span><span class="dt">05/25 12:00</span><span class="rel">H+18</span><span class="ref">04/27 12:00 떠나가요</span></div></td>
 <td class="cell-num tt-side cell-tt-win">+813</td>
 <td class="cell-num tt-side cell-tt-win">+2,235</td>
 <td class="tt-side divide-r"><span class="pill-mult hot">2.75×</span></td>
@@ -380,7 +382,7 @@ tbody tr:hover td.wd-side{background:linear-gradient(270deg,rgba(110,168,254,.08
 <td class="center"><span class="diff tt">+1,047</span></td>
 </tr>
 <tr>
-<td class="center"><div class="tcell-time"><span class="sweep-mark" title="3-0 완승">★</span><span class="dt">04/27 11:00</span><span class="rel">H+17</span></div></td>
+<td class="center"><div class="tcell-time"><span class="sweep-mark" title="3-0 완승">★</span><span class="dt">05/25 11:00</span><span class="rel">H+17</span><span class="ref">04/27 11:00 떠나가요</span></div></td>
 <td class="cell-num tt-side cell-tt-win">+935</td>
 <td class="cell-num tt-side cell-tt-win">+2,489</td>
 <td class="tt-side divide-r"><span class="pill-mult hot">2.66×</span></td>
@@ -391,7 +393,7 @@ tbody tr:hover td.wd-side{background:linear-gradient(270deg,rgba(110,168,254,.08
 <td class="center"><span class="diff tt">+1,328</span></td>
 </tr>
 <tr>
-<td class="center"><div class="tcell-time"><span class="sweep-mark" title="3-0 완승">★</span><span class="dt">04/27 10:00</span><span class="rel">H+16</span></div></td>
+<td class="center"><div class="tcell-time"><span class="sweep-mark" title="3-0 완승">★</span><span class="dt">05/25 10:00</span><span class="rel">H+16</span><span class="ref">04/27 10:00 떠나가요</span></div></td>
 <td class="cell-num tt-side cell-tt-win">+1,213</td>
 <td class="cell-num tt-side cell-tt-win">+2,927</td>
 <td class="tt-side divide-r"><span class="pill-mult high">2.41×</span></td>
@@ -402,7 +404,7 @@ tbody tr:hover td.wd-side{background:linear-gradient(270deg,rgba(110,168,254,.08
 <td class="center"><span class="diff tt">+1,788</span></td>
 </tr>
 <tr>
-<td class="center"><div class="tcell-time"><span class="sweep-mark" title="3-0 완승">★</span><span class="dt">04/27 09:00</span><span class="rel">H+15</span></div></td>
+<td class="center"><div class="tcell-time"><span class="sweep-mark" title="3-0 완승">★</span><span class="dt">05/25 09:00</span><span class="rel">H+15</span><span class="ref">04/27 09:00 떠나가요</span></div></td>
 <td class="cell-num tt-side cell-tt-win">+1,962</td>
 <td class="cell-num tt-side cell-tt-win">+4,384</td>
 <td class="tt-side divide-r"><span class="pill-mult high">2.23×</span></td>
@@ -413,7 +415,7 @@ tbody tr:hover td.wd-side{background:linear-gradient(270deg,rgba(110,168,254,.08
 <td class="center"><span class="diff tt">+3,355</span></td>
 </tr>
 <tr>
-<td class="center"><div class="tcell-time"><span class="sweep-mark" title="3-0 완승">★</span><span class="dt">04/27 08:00</span><span class="rel">H+14</span></div></td>
+<td class="center"><div class="tcell-time"><span class="sweep-mark" title="3-0 완승">★</span><span class="dt">05/25 08:00</span><span class="rel">H+14</span><span class="ref">04/27 08:00 떠나가요</span></div></td>
 <td class="cell-num tt-side cell-tt-win">+1,816</td>
 <td class="cell-num tt-side cell-tt-win">+3,714</td>
 <td class="tt-side divide-r"><span class="pill-mult high">2.05×</span></td>
@@ -424,7 +426,7 @@ tbody tr:hover td.wd-side{background:linear-gradient(270deg,rgba(110,168,254,.08
 <td class="center"><span class="diff tt">+2,878</span></td>
 </tr>
 <tr>
-<td class="center"><div class="tcell-time"><span class="dt">04/27 07:00</span><span class="rel">H+13</span></div></td>
+<td class="center"><div class="tcell-time"><span class="dt">05/25 07:00</span><span class="rel">H+13</span><span class="ref">04/27 07:00 떠나가요</span></div></td>
 <td class="cell-num cell-tt-win">+894</td>
 <td class="cell-num cell-faded">+2,017</td>
 <td class=" divide-r"><span class="pill-mult high">2.26×</span></td>
@@ -435,7 +437,7 @@ tbody tr:hover td.wd-side{background:linear-gradient(270deg,rgba(110,168,254,.08
 <td class="center"><span class="diff wd">-339</span></td>
 </tr>
 <tr>
-<td class="center"><div class="tcell-time"><span class="sweep-mark" title="3-0 완승">★</span><span class="dt">04/27 01:00</span><span class="rel">H+7</span></div></td>
+<td class="center"><div class="tcell-time"><span class="sweep-mark" title="3-0 완승">★</span><span class="dt">05/25 01:00</span><span class="rel">H+7</span><span class="ref">04/27 01:00 떠나가요</span></div></td>
 <td class="cell-num tt-side cell-tt-win">+366</td>
 <td class="cell-num tt-side cell-tt-win">+1,094</td>
 <td class="tt-side divide-r"><span class="pill-mult hot">2.99×</span></td>
@@ -446,7 +448,7 @@ tbody tr:hover td.wd-side{background:linear-gradient(270deg,rgba(110,168,254,.08
 <td class="center"><span class="diff tt">+579</span></td>
 </tr>
 <tr>
-<td class="center"><div class="tcell-time"><span class="sweep-mark" title="3-0 완승">★</span><span class="dt">04/27 00:00</span><span class="rel">H+6</span></div></td>
+<td class="center"><div class="tcell-time"><span class="sweep-mark" title="3-0 완승">★</span><span class="dt">05/25 00:00</span><span class="rel">H+6</span><span class="ref">04/27 00:00 떠나가요</span></div></td>
 <td class="cell-num tt-side cell-tt-win">+520</td>
 <td class="cell-num tt-side cell-tt-win">+1,305</td>
 <td class="tt-side divide-r"><span class="pill-mult high">2.51×</span></td>
@@ -457,7 +459,7 @@ tbody tr:hover td.wd-side{background:linear-gradient(270deg,rgba(110,168,254,.08
 <td class="center"><span class="diff tt">+565</span></td>
 </tr>
 <tr>
-<td class="center"><div class="tcell-time"><span class="sweep-mark" title="3-0 완승">★</span><span class="dt">04/26 23:00</span><span class="rel">H+5</span></div></td>
+<td class="center"><div class="tcell-time"><span class="sweep-mark" title="3-0 완승">★</span><span class="dt">05/24 23:00</span><span class="rel">H+5</span><span class="ref">04/26 23:00 떠나가요</span></div></td>
 <td class="cell-num tt-side cell-tt-win">+725</td>
 <td class="cell-num tt-side cell-tt-win">+1,624</td>
 <td class="tt-side divide-r"><span class="pill-mult high">2.24×</span></td>
@@ -468,7 +470,7 @@ tbody tr:hover td.wd-side{background:linear-gradient(270deg,rgba(110,168,254,.08
 <td class="center"><span class="diff tt">+796</span></td>
 </tr>
 <tr>
-<td class="center"><div class="tcell-time"><span class="sweep-mark" title="3-0 완승">★</span><span class="dt">04/26 22:00</span><span class="rel">H+4</span></div></td>
+<td class="center"><div class="tcell-time"><span class="sweep-mark" title="3-0 완승">★</span><span class="dt">05/24 22:00</span><span class="rel">H+4</span><span class="ref">04/26 22:00 떠나가요</span></div></td>
 <td class="cell-num tt-side cell-tt-win">+894</td>
 <td class="cell-num tt-side cell-tt-win">+1,861</td>
 <td class="tt-side divide-r"><span class="pill-mult high">2.08×</span></td>
@@ -479,7 +481,7 @@ tbody tr:hover td.wd-side{background:linear-gradient(270deg,rgba(110,168,254,.08
 <td class="center"><span class="diff tt">+1,004</span></td>
 </tr>
 <tr>
-<td class="center"><div class="tcell-time"><span class="sweep-mark" title="3-0 완승">★</span><span class="dt">04/26 21:00</span><span class="rel">H+3</span></div></td>
+<td class="center"><div class="tcell-time"><span class="sweep-mark" title="3-0 완승">★</span><span class="dt">05/24 21:00</span><span class="rel">H+3</span><span class="ref">04/26 21:00 떠나가요</span></div></td>
 <td class="cell-num tt-side cell-tt-win">+993</td>
 <td class="cell-num tt-side cell-tt-win">+1,958</td>
 <td class="tt-side divide-r"><span class="pill-mult mid">1.97×</span></td>
@@ -490,7 +492,7 @@ tbody tr:hover td.wd-side{background:linear-gradient(270deg,rgba(110,168,254,.08
 <td class="center"><span class="diff tt">+1,052</span></td>
 </tr>
 <tr>
-<td class="center"><div class="tcell-time"><span class="sweep-mark" title="3-0 완승">★</span><span class="dt">04/26 20:00</span><span class="rel">H+2</span></div></td>
+<td class="center"><div class="tcell-time"><span class="sweep-mark" title="3-0 완승">★</span><span class="dt">05/24 20:00</span><span class="rel">H+2</span><span class="ref">04/26 20:00 떠나가요</span></div></td>
 <td class="cell-num tt-side cell-tt-win">+1,102</td>
 <td class="cell-num tt-side cell-tt-win">+2,001</td>
 <td class="tt-side divide-r"><span class="pill-mult mid">1.82×</span></td>
@@ -501,7 +503,7 @@ tbody tr:hover td.wd-side{background:linear-gradient(270deg,rgba(110,168,254,.08
 <td class="center"><span class="diff tt">+1,099</span></td>
 </tr>
 <tr>
-<td class="center"><div class="tcell-time"><span class="sweep-mark" title="3-0 완승">★</span><span class="dt">04/26 19:00</span><span class="rel">H+1</span></div></td>
+<td class="center"><div class="tcell-time"><span class="sweep-mark" title="3-0 완승">★</span><span class="dt">05/24 19:00</span><span class="rel">H+1</span><span class="ref">04/26 19:00 떠나가요</span></div></td>
 <td class="cell-num tt-side cell-tt-win">+1,261</td>
 <td class="cell-num tt-side cell-tt-win">+1,850</td>
 <td class="tt-side divide-r"><span class="pill-mult low">1.47×</span></td>
@@ -976,7 +978,7 @@ tbody tr:hover td.wd-side{background:linear-gradient(270deg,rgba(110,168,254,.08
 <footer class="foot">
 <div class="row">
 <div><b>산식</b> · 매시간 1시간 동안 늘어난 청취자/재생 증가분 직접 매칭 · 시간배수 = 시간 재생 증가 ÷ 시간 청취자 증가</div>
-<div><b>BUILD</b> · 2026-05-25 13:22:04 KST</div>
+<div><b>BUILD</b> · 2026-05-25 13:39:09 KST</div>
 </div>
 <div class="row" style="margin-top:6px">
 <div><b>SOURCES</b> · 멜론 일간/스트리밍 카드 · 지니 실시간 차트 · 유튜브 검색 API · 매시간 자동 빌드 → GitHub 자동 배포</div>
