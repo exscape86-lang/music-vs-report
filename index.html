@@ -91,9 +91,16 @@ body{background:var(--bg);color:var(--ink);font:14.5px/1.55 var(--sans);letter-s
 /* SECTIONS */
 .section{margin-top:48px}
 .section-h{display:flex;align-items:baseline;justify-content:space-between;gap:20px;margin-bottom:18px;flex-wrap:wrap}
-.section-title{font-size:20px;font-weight:800;margin:0;letter-spacing:-.025em;color:var(--ink);display:flex;align-items:center;gap:10px}
+.section-title{font-size:20px;font-weight:800;margin:0;letter-spacing:-.025em;color:var(--ink);display:flex;align-items:center;gap:10px;flex-wrap:wrap}
 .section-title .sec-no{font-family:var(--mono);font-size:11px;font-weight:600;color:var(--muted);letter-spacing:.08em;padding:3px 8px;border:1px solid var(--line);border-radius:6px;background:var(--panel)}
 .section-title .em{color:var(--gold)}
+.src-chip{display:inline-flex;align-items:center;gap:6px;height:24px;padding:0 9px 0 6px;border-radius:7px;font-size:11.5px;font-weight:700;letter-spacing:.01em;border:1px solid var(--line);background:var(--panel-2);color:var(--ink-2);font-family:var(--sans);vertical-align:middle}
+.src-chip-fav{width:14px;height:14px;border-radius:3px;display:block;flex-shrink:0}
+.src-chip-txt{line-height:1}
+.src-chip.src-melon{border-color:rgba(0,205,60,.4);background:rgba(0,205,60,.08);color:#4FE17A}
+.src-chip.src-genie{border-color:rgba(255,107,107,.4);background:rgba(255,107,107,.08);color:#FF8E8E}
+.src-chip.src-youtube{border-color:rgba(255,0,51,.4);background:rgba(255,0,51,.08);color:#FF6A85}
+.chart-title{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
 .section-sub{color:var(--muted);font-size:12.5px;letter-spacing:-.005em;max-width:560px;line-height:1.5}
 
 /* DELTA CARDS — recent 1h VS */
@@ -254,7 +261,7 @@ tbody tr:hover td.wd-side{background:linear-gradient(270deg,rgba(110,168,254,.08
   </div>
   <div class="meta">
     <span><span class="live-dot"></span>LIVE</span>
-    <span>UPDATED · 2026-05-25 12:49 KST</span>
+    <span>UPDATED · 2026-05-25 13:01 KST</span>
   </div>
 </header>
 
@@ -293,12 +300,12 @@ tbody tr:hover td.wd-side{background:linear-gradient(270deg,rgba(110,168,254,.08
         <div class="score-meta">매시간 항목 승수</div>
       </div>
     </div>
-    <div class="battle-note">발매 후 <b>같은 경과시간</b> 매칭 · 청취자/시 · 재생/시 · 시간배수 = 총 <b>39회 대결</b> (13시간 × 3항목)</div>
+    <div class="battle-note">발매 후 <b>같은 경과시간</b> 매칭 · 청취자/시 · 재생/시 · 시간배수 = 총 <b>39회 대결</b> (13시간 × 3항목) · 시간별 데이터 기반 <span class="src-chip src-genie"><img class="src-chip-fav" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAMAAACdt4HsAAAAY1BMVEX///8Alv8Aif/J5v8Ajf8Aj//d7/8AlP+Oxv8Ai/+czf8Akv8Ahf/n8//1/f/7/v9Lpf+z2P+73P/I4v8/n/+byf+n0P9ztP9krf8tmP/V6/92uf/O6f9msP+Hwv/w+f+Fvf8+kdDiAAABP0lEQVRYhe2W3Y6DIBCFRUEcEMWWWuiP7fs/5SJgtu3NZvBmN8u5MEzi+RyQGaiqoqJ/oHYS4qD84GjoCW+fDdBV59bWnPQt0q4ckCgJ3D/rBue/BNeLkIChJmQXQPN9gAa26dcsC3CWwQTX5tZBBmBM/mkNjjUeoMJXuY7RnaMBbQCwLkaCFkAB/FFArAV5jdHC8NVIYzU+1mBgGf0gNSTnO7EyPAMw09RFiNuaKw4wyM+WiG2qh34noFo++zoWUHX9TkB1McD8AnImMwH+dFi0MVoI/EZ6V8ZWDhq3wSlkADecXVlnpjiMOwkUyj/0nPB+8Vk8dFxEh0sgViCTd5t+AnviADZVAN+OeeQM0sJ9C7B3rJG+3TCYRvr92rmXHMCi/V5PGrPgVM45fr8VhJZAuZ2GPH/Q+PMrRUW/QV8cXA2JYuMm8gAAAABJRU5ErkJggg==" alt=""><span class="src-chip-txt">지니</span></span></div>
   </div>
 </section>
 <section class="section">
 <div class="section-h">
-  <h2 class="section-title"><span class="sec-no">01</span>가장 최근 1시간 <span class="em">증가분</span> VS</h2>
+  <h2 class="section-title"><span class="sec-no">01</span>가장 최근 1시간 <span class="em">증가분</span> VS <span class="src-chip src-genie"><img class="src-chip-fav" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAMAAACdt4HsAAAAY1BMVEX///8Alv8Aif/J5v8Ajf8Aj//d7/8AlP+Oxv8Ai/+czf8Akv8Ahf/n8//1/f/7/v9Lpf+z2P+73P/I4v8/n/+byf+n0P9ztP9krf8tmP/V6/92uf/O6f9msP+Hwv/w+f+Fvf8+kdDiAAABP0lEQVRYhe2W3Y6DIBCFRUEcEMWWWuiP7fs/5SJgtu3NZvBmN8u5MEzi+RyQGaiqoqJ/oHYS4qD84GjoCW+fDdBV59bWnPQt0q4ckCgJ3D/rBue/BNeLkIChJmQXQPN9gAa26dcsC3CWwQTX5tZBBmBM/mkNjjUeoMJXuY7RnaMBbQCwLkaCFkAB/FFArAV5jdHC8NVIYzU+1mBgGf0gNSTnO7EyPAMw09RFiNuaKw4wyM+WiG2qh34noFo++zoWUHX9TkB1McD8AnImMwH+dFi0MVoI/EZ6V8ZWDhq3wSlkADecXVlnpjiMOwkUyj/0nPB+8Vk8dFxEh0sgViCTd5t+AnviADZVAN+OeeQM0sJ9C7B3rJG+3TCYRvr92rmXHMCi/V5PGrPgVM45fr8VhJZAuZ2GPH/Q+PMrRUW/QV8cXA2JYuMm8gAAAABJRU5ErkJggg==" alt=""><span class="src-chip-txt">지니</span></span></h2>
   <span class="section-sub">발매 H+18 시점 · 떠나가요 04/27 12:00 KST vs 이 사랑 05/25 12:00 KST</span>
 </div>
 <div class="delta-grid">
@@ -333,7 +340,7 @@ tbody tr:hover td.wd-side{background:linear-gradient(270deg,rgba(110,168,254,.08
 </section>
 <section class="section">
 <div class="section-h">
-  <h2 class="section-title"><span class="sec-no">02</span>매시간 <span class="em">증가분</span> 매칭</h2>
+  <h2 class="section-title"><span class="sec-no">02</span>매시간 <span class="em">증가분</span> 매칭 <span class="src-chip src-genie"><img class="src-chip-fav" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAMAAACdt4HsAAAAY1BMVEX///8Alv8Aif/J5v8Ajf8Aj//d7/8AlP+Oxv8Ai/+czf8Akv8Ahf/n8//1/f/7/v9Lpf+z2P+73P/I4v8/n/+byf+n0P9ztP9krf8tmP/V6/92uf/O6f9msP+Hwv/w+f+Fvf8+kdDiAAABP0lEQVRYhe2W3Y6DIBCFRUEcEMWWWuiP7fs/5SJgtu3NZvBmN8u5MEzi+RyQGaiqoqJ/oHYS4qD84GjoCW+fDdBV59bWnPQt0q4ckCgJ3D/rBue/BNeLkIChJmQXQPN9gAa26dcsC3CWwQTX5tZBBmBM/mkNjjUeoMJXuY7RnaMBbQCwLkaCFkAB/FFArAV5jdHC8NVIYzU+1mBgGf0gNSTnO7EyPAMw09RFiNuaKw4wyM+WiG2qh34noFo++zoWUHX9TkB1McD8AnImMwH+dFi0MVoI/EZ6V8ZWDhq3wSlkADecXVlnpjiMOwkUyj/0nPB+8Vk8dFxEh0sgViCTd5t+AnviADZVAN+OeeQM0sJ9C7B3rJG+3TCYRvr92rmXHMCi/V5PGrPgVM45fr8VhJZAuZ2GPH/Q+PMrRUW/QV8cXA2JYuMm8gAAAABJRU5ErkJggg==" alt=""><span class="src-chip-txt">지니</span></span> <span style="font-size:11.5px;color:var(--muted);font-weight:600;margin-left:4px">최신순</span></h2>
   <span class="section-sub">같은 발매 후 경과시간에서 그 시간 청취자·재생·시간배수 비교 · 가운데 화살표가 그 시간 청취자 승자를 가리킴 · 행 양쪽 옅은 컬러는 승자 사이드</span>
 </div>
 <div class="tbl-wrap"><table>
@@ -351,125 +358,15 @@ tbody tr:hover td.wd-side{background:linear-gradient(270deg,rgba(110,168,254,.08
 </tr>
 </thead><tbody>
 <tr>
-<td class="center"><div class="tcell-time"><span class="sweep-mark" title="3-0 완승">★</span><span class="dt">04/26 19:00</span><span class="rel">H+1</span></div></td>
-<td class="cell-num tt-side cell-tt-win">+1,261</td>
-<td class="cell-num tt-side cell-tt-win">+1,850</td>
-<td class="tt-side divide-r"><span class="pill-mult low">1.47×</span></td>
+<td class="center"><div class="tcell-time"><span class="sweep-mark" title="3-0 완승">★</span><span class="dt">04/27 12:00</span><span class="rel">H+18</span></div></td>
+<td class="cell-num tt-side cell-tt-win">+813</td>
+<td class="cell-num tt-side cell-tt-win">+2,235</td>
+<td class="tt-side divide-r"><span class="pill-mult hot">2.75×</span></td>
 <td class="vs-cell"><div class="vs-arrow tt-strong"><span class="arr">←</span><span class="vs-score">3<span class="vs-dash">·</span>0</span></div></td>
-<td class="cell-num cell-faded">+615</td>
-<td class="cell-num cell-faded">+825</td>
-<td class=""><span class="pill-mult low">1.34×</span></td>
-<td class="center"><span class="diff tt">+1,025</span></td>
-</tr>
-<tr>
-<td class="center"><div class="tcell-time"><span class="sweep-mark" title="3-0 완승">★</span><span class="dt">04/26 20:00</span><span class="rel">H+2</span></div></td>
-<td class="cell-num tt-side cell-tt-win">+1,102</td>
-<td class="cell-num tt-side cell-tt-win">+2,001</td>
-<td class="tt-side divide-r"><span class="pill-mult mid">1.82×</span></td>
-<td class="vs-cell"><div class="vs-arrow tt-strong"><span class="arr">←</span><span class="vs-score">3<span class="vs-dash">·</span>0</span></div></td>
-<td class="cell-num cell-faded">+580</td>
-<td class="cell-num cell-faded">+902</td>
-<td class=""><span class="pill-mult low">1.56×</span></td>
-<td class="center"><span class="diff tt">+1,099</span></td>
-</tr>
-<tr>
-<td class="center"><div class="tcell-time"><span class="sweep-mark" title="3-0 완승">★</span><span class="dt">04/26 21:00</span><span class="rel">H+3</span></div></td>
-<td class="cell-num tt-side cell-tt-win">+993</td>
-<td class="cell-num tt-side cell-tt-win">+1,958</td>
-<td class="tt-side divide-r"><span class="pill-mult mid">1.97×</span></td>
-<td class="vs-cell"><div class="vs-arrow tt-strong"><span class="arr">←</span><span class="vs-score">3<span class="vs-dash">·</span>0</span></div></td>
-<td class="cell-num cell-faded">+586</td>
-<td class="cell-num cell-faded">+906</td>
-<td class=""><span class="pill-mult low">1.55×</span></td>
-<td class="center"><span class="diff tt">+1,052</span></td>
-</tr>
-<tr>
-<td class="center"><div class="tcell-time"><span class="sweep-mark" title="3-0 완승">★</span><span class="dt">04/26 22:00</span><span class="rel">H+4</span></div></td>
-<td class="cell-num tt-side cell-tt-win">+894</td>
-<td class="cell-num tt-side cell-tt-win">+1,861</td>
-<td class="tt-side divide-r"><span class="pill-mult high">2.08×</span></td>
-<td class="vs-cell"><div class="vs-arrow tt-strong"><span class="arr">←</span><span class="vs-score">3<span class="vs-dash">·</span>0</span></div></td>
-<td class="cell-num cell-faded">+523</td>
-<td class="cell-num cell-faded">+857</td>
-<td class=""><span class="pill-mult low">1.64×</span></td>
-<td class="center"><span class="diff tt">+1,004</span></td>
-</tr>
-<tr>
-<td class="center"><div class="tcell-time"><span class="sweep-mark" title="3-0 완승">★</span><span class="dt">04/26 23:00</span><span class="rel">H+5</span></div></td>
-<td class="cell-num tt-side cell-tt-win">+725</td>
-<td class="cell-num tt-side cell-tt-win">+1,624</td>
-<td class="tt-side divide-r"><span class="pill-mult high">2.24×</span></td>
-<td class="vs-cell"><div class="vs-arrow tt-strong"><span class="arr">←</span><span class="vs-score">3<span class="vs-dash">·</span>0</span></div></td>
-<td class="cell-num cell-faded">+471</td>
-<td class="cell-num cell-faded">+828</td>
-<td class=""><span class="pill-mult low">1.76×</span></td>
-<td class="center"><span class="diff tt">+796</span></td>
-</tr>
-<tr>
-<td class="center"><div class="tcell-time"><span class="sweep-mark" title="3-0 완승">★</span><span class="dt">04/27 00:00</span><span class="rel">H+6</span></div></td>
-<td class="cell-num tt-side cell-tt-win">+520</td>
-<td class="cell-num tt-side cell-tt-win">+1,305</td>
-<td class="tt-side divide-r"><span class="pill-mult high">2.51×</span></td>
-<td class="vs-cell"><div class="vs-arrow tt-strong"><span class="arr">←</span><span class="vs-score">3<span class="vs-dash">·</span>0</span></div></td>
-<td class="cell-num cell-faded">+369</td>
-<td class="cell-num cell-faded">+740</td>
-<td class=""><span class="pill-mult high">2.01×</span></td>
-<td class="center"><span class="diff tt">+565</span></td>
-</tr>
-<tr>
-<td class="center"><div class="tcell-time"><span class="sweep-mark" title="3-0 완승">★</span><span class="dt">04/27 01:00</span><span class="rel">H+7</span></div></td>
-<td class="cell-num tt-side cell-tt-win">+366</td>
-<td class="cell-num tt-side cell-tt-win">+1,094</td>
-<td class="tt-side divide-r"><span class="pill-mult hot">2.99×</span></td>
-<td class="vs-cell"><div class="vs-arrow tt-strong"><span class="arr">←</span><span class="vs-score">3<span class="vs-dash">·</span>0</span></div></td>
-<td class="cell-num cell-faded">+261</td>
-<td class="cell-num cell-faded">+515</td>
-<td class=""><span class="pill-mult mid">1.97×</span></td>
-<td class="center"><span class="diff tt">+579</span></td>
-</tr>
-<tr>
-<td class="center"><div class="tcell-time"><span class="dt">04/27 07:00</span><span class="rel">H+13</span></div></td>
-<td class="cell-num cell-tt-win">+894</td>
-<td class="cell-num cell-faded">+2,017</td>
-<td class=" divide-r"><span class="pill-mult high">2.26×</span></td>
-<td class="vs-cell"><div class="vs-arrow wd"><span class="arr">→</span><span class="vs-score">1<span class="vs-dash">·</span>2</span></div></td>
-<td class="cell-num wd-side cell-faded">+833</td>
-<td class="cell-num wd-side cell-wd-win">+2,356</td>
-<td class="wd-side"><span class="pill-mult hot">2.83×</span></td>
-<td class="center"><span class="diff wd">-339</span></td>
-</tr>
-<tr>
-<td class="center"><div class="tcell-time"><span class="sweep-mark" title="3-0 완승">★</span><span class="dt">04/27 08:00</span><span class="rel">H+14</span></div></td>
-<td class="cell-num tt-side cell-tt-win">+1,816</td>
-<td class="cell-num tt-side cell-tt-win">+3,714</td>
-<td class="tt-side divide-r"><span class="pill-mult high">2.05×</span></td>
-<td class="vs-cell"><div class="vs-arrow tt-strong"><span class="arr">←</span><span class="vs-score">3<span class="vs-dash">·</span>0</span></div></td>
-<td class="cell-num cell-faded">+411</td>
-<td class="cell-num cell-faded">+836</td>
-<td class=""><span class="pill-mult high">2.03×</span></td>
-<td class="center"><span class="diff tt">+2,878</span></td>
-</tr>
-<tr>
-<td class="center"><div class="tcell-time"><span class="sweep-mark" title="3-0 완승">★</span><span class="dt">04/27 09:00</span><span class="rel">H+15</span></div></td>
-<td class="cell-num tt-side cell-tt-win">+1,962</td>
-<td class="cell-num tt-side cell-tt-win">+4,384</td>
-<td class="tt-side divide-r"><span class="pill-mult high">2.23×</span></td>
-<td class="vs-cell"><div class="vs-arrow tt-strong"><span class="arr">←</span><span class="vs-score">3<span class="vs-dash">·</span>0</span></div></td>
-<td class="cell-num cell-faded">+527</td>
-<td class="cell-num cell-faded">+1,029</td>
-<td class=""><span class="pill-mult mid">1.95×</span></td>
-<td class="center"><span class="diff tt">+3,355</span></td>
-</tr>
-<tr>
-<td class="center"><div class="tcell-time"><span class="sweep-mark" title="3-0 완승">★</span><span class="dt">04/27 10:00</span><span class="rel">H+16</span></div></td>
-<td class="cell-num tt-side cell-tt-win">+1,213</td>
-<td class="cell-num tt-side cell-tt-win">+2,927</td>
-<td class="tt-side divide-r"><span class="pill-mult high">2.41×</span></td>
-<td class="vs-cell"><div class="vs-arrow tt-strong"><span class="arr">←</span><span class="vs-score">3<span class="vs-dash">·</span>0</span></div></td>
-<td class="cell-num cell-faded">+573</td>
-<td class="cell-num cell-faded">+1,139</td>
-<td class=""><span class="pill-mult mid">1.99×</span></td>
-<td class="center"><span class="diff tt">+1,788</span></td>
+<td class="cell-num cell-faded">+607</td>
+<td class="cell-num cell-faded">+1,188</td>
+<td class=""><span class="pill-mult mid">1.96×</span></td>
+<td class="center"><span class="diff tt">+1,047</span></td>
 </tr>
 <tr>
 <td class="center"><div class="tcell-time"><span class="sweep-mark" title="3-0 완승">★</span><span class="dt">04/27 11:00</span><span class="rel">H+17</span></div></td>
@@ -483,24 +380,134 @@ tbody tr:hover td.wd-side{background:linear-gradient(270deg,rgba(110,168,254,.08
 <td class="center"><span class="diff tt">+1,328</span></td>
 </tr>
 <tr>
-<td class="center"><div class="tcell-time"><span class="sweep-mark" title="3-0 완승">★</span><span class="dt">04/27 12:00</span><span class="rel">H+18</span></div></td>
-<td class="cell-num tt-side cell-tt-win">+813</td>
-<td class="cell-num tt-side cell-tt-win">+2,235</td>
-<td class="tt-side divide-r"><span class="pill-mult hot">2.75×</span></td>
+<td class="center"><div class="tcell-time"><span class="sweep-mark" title="3-0 완승">★</span><span class="dt">04/27 10:00</span><span class="rel">H+16</span></div></td>
+<td class="cell-num tt-side cell-tt-win">+1,213</td>
+<td class="cell-num tt-side cell-tt-win">+2,927</td>
+<td class="tt-side divide-r"><span class="pill-mult high">2.41×</span></td>
 <td class="vs-cell"><div class="vs-arrow tt-strong"><span class="arr">←</span><span class="vs-score">3<span class="vs-dash">·</span>0</span></div></td>
-<td class="cell-num cell-faded">+607</td>
-<td class="cell-num cell-faded">+1,188</td>
-<td class=""><span class="pill-mult mid">1.96×</span></td>
-<td class="center"><span class="diff tt">+1,047</span></td>
+<td class="cell-num cell-faded">+573</td>
+<td class="cell-num cell-faded">+1,139</td>
+<td class=""><span class="pill-mult mid">1.99×</span></td>
+<td class="center"><span class="diff tt">+1,788</span></td>
+</tr>
+<tr>
+<td class="center"><div class="tcell-time"><span class="sweep-mark" title="3-0 완승">★</span><span class="dt">04/27 09:00</span><span class="rel">H+15</span></div></td>
+<td class="cell-num tt-side cell-tt-win">+1,962</td>
+<td class="cell-num tt-side cell-tt-win">+4,384</td>
+<td class="tt-side divide-r"><span class="pill-mult high">2.23×</span></td>
+<td class="vs-cell"><div class="vs-arrow tt-strong"><span class="arr">←</span><span class="vs-score">3<span class="vs-dash">·</span>0</span></div></td>
+<td class="cell-num cell-faded">+527</td>
+<td class="cell-num cell-faded">+1,029</td>
+<td class=""><span class="pill-mult mid">1.95×</span></td>
+<td class="center"><span class="diff tt">+3,355</span></td>
+</tr>
+<tr>
+<td class="center"><div class="tcell-time"><span class="sweep-mark" title="3-0 완승">★</span><span class="dt">04/27 08:00</span><span class="rel">H+14</span></div></td>
+<td class="cell-num tt-side cell-tt-win">+1,816</td>
+<td class="cell-num tt-side cell-tt-win">+3,714</td>
+<td class="tt-side divide-r"><span class="pill-mult high">2.05×</span></td>
+<td class="vs-cell"><div class="vs-arrow tt-strong"><span class="arr">←</span><span class="vs-score">3<span class="vs-dash">·</span>0</span></div></td>
+<td class="cell-num cell-faded">+411</td>
+<td class="cell-num cell-faded">+836</td>
+<td class=""><span class="pill-mult high">2.03×</span></td>
+<td class="center"><span class="diff tt">+2,878</span></td>
+</tr>
+<tr>
+<td class="center"><div class="tcell-time"><span class="dt">04/27 07:00</span><span class="rel">H+13</span></div></td>
+<td class="cell-num cell-tt-win">+894</td>
+<td class="cell-num cell-faded">+2,017</td>
+<td class=" divide-r"><span class="pill-mult high">2.26×</span></td>
+<td class="vs-cell"><div class="vs-arrow wd"><span class="arr">→</span><span class="vs-score">1<span class="vs-dash">·</span>2</span></div></td>
+<td class="cell-num wd-side cell-faded">+833</td>
+<td class="cell-num wd-side cell-wd-win">+2,356</td>
+<td class="wd-side"><span class="pill-mult hot">2.83×</span></td>
+<td class="center"><span class="diff wd">-339</span></td>
+</tr>
+<tr>
+<td class="center"><div class="tcell-time"><span class="sweep-mark" title="3-0 완승">★</span><span class="dt">04/27 01:00</span><span class="rel">H+7</span></div></td>
+<td class="cell-num tt-side cell-tt-win">+366</td>
+<td class="cell-num tt-side cell-tt-win">+1,094</td>
+<td class="tt-side divide-r"><span class="pill-mult hot">2.99×</span></td>
+<td class="vs-cell"><div class="vs-arrow tt-strong"><span class="arr">←</span><span class="vs-score">3<span class="vs-dash">·</span>0</span></div></td>
+<td class="cell-num cell-faded">+261</td>
+<td class="cell-num cell-faded">+515</td>
+<td class=""><span class="pill-mult mid">1.97×</span></td>
+<td class="center"><span class="diff tt">+579</span></td>
+</tr>
+<tr>
+<td class="center"><div class="tcell-time"><span class="sweep-mark" title="3-0 완승">★</span><span class="dt">04/27 00:00</span><span class="rel">H+6</span></div></td>
+<td class="cell-num tt-side cell-tt-win">+520</td>
+<td class="cell-num tt-side cell-tt-win">+1,305</td>
+<td class="tt-side divide-r"><span class="pill-mult high">2.51×</span></td>
+<td class="vs-cell"><div class="vs-arrow tt-strong"><span class="arr">←</span><span class="vs-score">3<span class="vs-dash">·</span>0</span></div></td>
+<td class="cell-num cell-faded">+369</td>
+<td class="cell-num cell-faded">+740</td>
+<td class=""><span class="pill-mult high">2.01×</span></td>
+<td class="center"><span class="diff tt">+565</span></td>
+</tr>
+<tr>
+<td class="center"><div class="tcell-time"><span class="sweep-mark" title="3-0 완승">★</span><span class="dt">04/26 23:00</span><span class="rel">H+5</span></div></td>
+<td class="cell-num tt-side cell-tt-win">+725</td>
+<td class="cell-num tt-side cell-tt-win">+1,624</td>
+<td class="tt-side divide-r"><span class="pill-mult high">2.24×</span></td>
+<td class="vs-cell"><div class="vs-arrow tt-strong"><span class="arr">←</span><span class="vs-score">3<span class="vs-dash">·</span>0</span></div></td>
+<td class="cell-num cell-faded">+471</td>
+<td class="cell-num cell-faded">+828</td>
+<td class=""><span class="pill-mult low">1.76×</span></td>
+<td class="center"><span class="diff tt">+796</span></td>
+</tr>
+<tr>
+<td class="center"><div class="tcell-time"><span class="sweep-mark" title="3-0 완승">★</span><span class="dt">04/26 22:00</span><span class="rel">H+4</span></div></td>
+<td class="cell-num tt-side cell-tt-win">+894</td>
+<td class="cell-num tt-side cell-tt-win">+1,861</td>
+<td class="tt-side divide-r"><span class="pill-mult high">2.08×</span></td>
+<td class="vs-cell"><div class="vs-arrow tt-strong"><span class="arr">←</span><span class="vs-score">3<span class="vs-dash">·</span>0</span></div></td>
+<td class="cell-num cell-faded">+523</td>
+<td class="cell-num cell-faded">+857</td>
+<td class=""><span class="pill-mult low">1.64×</span></td>
+<td class="center"><span class="diff tt">+1,004</span></td>
+</tr>
+<tr>
+<td class="center"><div class="tcell-time"><span class="sweep-mark" title="3-0 완승">★</span><span class="dt">04/26 21:00</span><span class="rel">H+3</span></div></td>
+<td class="cell-num tt-side cell-tt-win">+993</td>
+<td class="cell-num tt-side cell-tt-win">+1,958</td>
+<td class="tt-side divide-r"><span class="pill-mult mid">1.97×</span></td>
+<td class="vs-cell"><div class="vs-arrow tt-strong"><span class="arr">←</span><span class="vs-score">3<span class="vs-dash">·</span>0</span></div></td>
+<td class="cell-num cell-faded">+586</td>
+<td class="cell-num cell-faded">+906</td>
+<td class=""><span class="pill-mult low">1.55×</span></td>
+<td class="center"><span class="diff tt">+1,052</span></td>
+</tr>
+<tr>
+<td class="center"><div class="tcell-time"><span class="sweep-mark" title="3-0 완승">★</span><span class="dt">04/26 20:00</span><span class="rel">H+2</span></div></td>
+<td class="cell-num tt-side cell-tt-win">+1,102</td>
+<td class="cell-num tt-side cell-tt-win">+2,001</td>
+<td class="tt-side divide-r"><span class="pill-mult mid">1.82×</span></td>
+<td class="vs-cell"><div class="vs-arrow tt-strong"><span class="arr">←</span><span class="vs-score">3<span class="vs-dash">·</span>0</span></div></td>
+<td class="cell-num cell-faded">+580</td>
+<td class="cell-num cell-faded">+902</td>
+<td class=""><span class="pill-mult low">1.56×</span></td>
+<td class="center"><span class="diff tt">+1,099</span></td>
+</tr>
+<tr>
+<td class="center"><div class="tcell-time"><span class="sweep-mark" title="3-0 완승">★</span><span class="dt">04/26 19:00</span><span class="rel">H+1</span></div></td>
+<td class="cell-num tt-side cell-tt-win">+1,261</td>
+<td class="cell-num tt-side cell-tt-win">+1,850</td>
+<td class="tt-side divide-r"><span class="pill-mult low">1.47×</span></td>
+<td class="vs-cell"><div class="vs-arrow tt-strong"><span class="arr">←</span><span class="vs-score">3<span class="vs-dash">·</span>0</span></div></td>
+<td class="cell-num cell-faded">+615</td>
+<td class="cell-num cell-faded">+825</td>
+<td class=""><span class="pill-mult low">1.34×</span></td>
+<td class="center"><span class="diff tt">+1,025</span></td>
 </tr>
 </tbody></table></div></section>
 <section class="section">
 <div class="section-h">
-  <h2 class="section-title"><span class="sec-no">03</span>매일 <span class="em">증가분</span> 추이</h2>
+  <h2 class="section-title"><span class="sec-no">03</span>매일 <span class="em">증가분</span> 추이 <span class="src-chip src-melon"><img class="src-chip-fav" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABDklEQVQ4jaXTvUoDQRQF4G9FUogPIGJtJSKLWIgrIlY+QvAxrERCsLCwEB9C8ggWKSyybVhELKxERHwACxEJjsVOJG7iT8yF4c6cuedwz1wmCSEkJoipScgw/dfCpMhmcYE1NEKan4zbwS42UEOzD44jcIXXuO/0wSELSZHNoIE6FvCEFo6wFFf7s35wCpHcQTqig2tshjR/HgSrFg4GyDc4RTeel3FYVa0K1GO+xWpI832sK/3D3m8C8zF3Qpq/QUjzHi4jPpcU2RdOVeAh5q34HpIiq2E74o8hzd9/EjiPeRHdpMjOUGAl4q2qhVFTaCt9V6NQTuHl2w7i5Y5y5nfo4R7Ho8hDHfwnJv6NH+GGTX99Ri3kAAAAAElFTkSuQmCC" alt=""><span class="src-chip-txt">멜론</span></span> <span class="src-chip src-genie"><img class="src-chip-fav" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAMAAACdt4HsAAAAY1BMVEX///8Alv8Aif/J5v8Ajf8Aj//d7/8AlP+Oxv8Ai/+czf8Akv8Ahf/n8//1/f/7/v9Lpf+z2P+73P/I4v8/n/+byf+n0P9ztP9krf8tmP/V6/92uf/O6f9msP+Hwv/w+f+Fvf8+kdDiAAABP0lEQVRYhe2W3Y6DIBCFRUEcEMWWWuiP7fs/5SJgtu3NZvBmN8u5MEzi+RyQGaiqoqJ/oHYS4qD84GjoCW+fDdBV59bWnPQt0q4ckCgJ3D/rBue/BNeLkIChJmQXQPN9gAa26dcsC3CWwQTX5tZBBmBM/mkNjjUeoMJXuY7RnaMBbQCwLkaCFkAB/FFArAV5jdHC8NVIYzU+1mBgGf0gNSTnO7EyPAMw09RFiNuaKw4wyM+WiG2qh34noFo++zoWUHX9TkB1McD8AnImMwH+dFi0MVoI/EZ6V8ZWDhq3wSlkADecXVlnpjiMOwkUyj/0nPB+8Vk8dFxEh0sgViCTd5t+AnviADZVAN+OeeQM0sJ9C7B3rJG+3TCYRvr92rmXHMCi/V5PGrPgVM45fr8VhJZAuZ2GPH/Q+PMrRUW/QV8cXA2JYuMm8gAAAABJRU5ErkJggg==" alt=""><span class="src-chip-txt">지니</span></span></h2>
   <span class="section-sub">발매 후 같은 일자(D+N) / 같은 시간(H+N) 정렬 · 이 사랑은 D+1 진행 중이라 멜론 일별은 빈 라인</span>
 </div>
 <div class="charts">
-<div class="chart-box"><div class="chart-title-row"><div class="chart-title">멜론 일별 청취자 증가 · 떠나가요 D+1~D+27 (이 사랑은 멜론 비공개)</div><div class="chart-legend"><span class="lg-chip tt"><span class="lg-dot" style="background:#ff7ab6"></span>떠나가요</span><span class="lg-chip wd"><span class="lg-dot" style="background:#6ea8fe"></span>이 사랑</span></div></div>
+<div class="chart-box"><div class="chart-title-row"><div class="chart-title">[멜론] 일별 청취자 증가 · 떠나가요 D+1~D+27 (이 사랑은 멜론 비공개)</div><div class="chart-legend"><span class="lg-chip tt"><span class="lg-dot" style="background:#ff7ab6"></span>떠나가요</span><span class="lg-chip wd"><span class="lg-dot" style="background:#6ea8fe"></span>이 사랑</span></div></div>
 <svg viewBox="0 0 920 300" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" role="img">
 <defs>
 <linearGradient id="gtt-_listener_delta-day" x1="0" x2="0" y1="0" y2="1">
@@ -522,7 +529,7 @@ tbody tr:hover td.wd-side{background:linear-gradient(270deg,rgba(110,168,254,.08
 
 </svg>
 </div>
-<div class="chart-box"><div class="chart-title-row"><div class="chart-title">멜론 일별 재생 증가 · 떠나가요 D+1~D+27 (이 사랑은 멜론 비공개)</div><div class="chart-legend"><span class="lg-chip tt"><span class="lg-dot" style="background:#ff7ab6"></span>떠나가요</span><span class="lg-chip wd"><span class="lg-dot" style="background:#6ea8fe"></span>이 사랑</span></div></div>
+<div class="chart-box"><div class="chart-title-row"><div class="chart-title">[멜론] 일별 재생 증가 · 떠나가요 D+1~D+27 (이 사랑은 멜론 비공개)</div><div class="chart-legend"><span class="lg-chip tt"><span class="lg-dot" style="background:#ff7ab6"></span>떠나가요</span><span class="lg-chip wd"><span class="lg-dot" style="background:#6ea8fe"></span>이 사랑</span></div></div>
 <svg viewBox="0 0 920 300" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" role="img">
 <defs>
 <linearGradient id="gtt-_play_delta-day" x1="0" x2="0" y1="0" y2="1">
@@ -545,7 +552,7 @@ tbody tr:hover td.wd-side{background:linear-gradient(270deg,rgba(110,168,254,.08
 </svg>
 </div>
 </div><div class="charts" style="margin-top:16px">
-<div class="chart-box"><div class="chart-title-row"><div class="chart-title">지니 시간당 청취자 증가 · 발매 후 48시간</div><div class="chart-legend"><span class="lg-chip tt"><span class="lg-dot" style="background:#ff7ab6"></span>떠나가요</span><span class="lg-chip wd"><span class="lg-dot" style="background:#6ea8fe"></span>이 사랑</span></div></div>
+<div class="chart-box"><div class="chart-title-row"><div class="chart-title">[지니] 시간당 청취자 증가 · 발매 후 48시간</div><div class="chart-legend"><span class="lg-chip tt"><span class="lg-dot" style="background:#ff7ab6"></span>떠나가요</span><span class="lg-chip wd"><span class="lg-dot" style="background:#6ea8fe"></span>이 사랑</span></div></div>
 <svg viewBox="0 0 920 300" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" role="img">
 <defs>
 <linearGradient id="gtt-_listener_delta-hour" x1="0" x2="0" y1="0" y2="1">
@@ -567,7 +574,7 @@ tbody tr:hover td.wd-side{background:linear-gradient(270deg,rgba(110,168,254,.08
 <circle cx="64.0" cy="184.5" r="3" fill="#0E1320" stroke="#6ea8fe" stroke-width="2"/><circle cx="81.5" cy="188.6" r="3" fill="#0E1320" stroke="#6ea8fe" stroke-width="2"/><circle cx="99.1" cy="187.9" r="3" fill="#0E1320" stroke="#6ea8fe" stroke-width="2"/><circle cx="116.6" cy="195.2" r="3" fill="#0E1320" stroke="#6ea8fe" stroke-width="2"/><circle cx="134.1" cy="201.3" r="3" fill="#0E1320" stroke="#6ea8fe" stroke-width="2"/><circle cx="151.7" cy="213.1" r="3" fill="#0E1320" stroke="#6ea8fe" stroke-width="2"/><circle cx="169.2" cy="225.7" r="3" fill="#0E1320" stroke="#6ea8fe" stroke-width="2"/><circle cx="274.4" cy="159.2" r="3" fill="#0E1320" stroke="#6ea8fe" stroke-width="2"/><circle cx="291.9" cy="208.2" r="3" fill="#0E1320" stroke="#6ea8fe" stroke-width="2"/><circle cx="309.4" cy="194.8" r="3" fill="#0E1320" stroke="#6ea8fe" stroke-width="2"/><circle cx="327.0" cy="189.4" r="3" fill="#0E1320" stroke="#6ea8fe" stroke-width="2"/><circle cx="344.5" cy="183.4" r="3" fill="#0E1320" stroke="#6ea8fe" stroke-width="2"/><circle cx="362.0" cy="185.5" r="3" fill="#0E1320" stroke="#6ea8fe" stroke-width="2"/>
 </svg>
 </div>
-<div class="chart-box"><div class="chart-title-row"><div class="chart-title">지니 시간당 재생 증가 · 발매 후 48시간</div><div class="chart-legend"><span class="lg-chip tt"><span class="lg-dot" style="background:#ff7ab6"></span>떠나가요</span><span class="lg-chip wd"><span class="lg-dot" style="background:#6ea8fe"></span>이 사랑</span></div></div>
+<div class="chart-box"><div class="chart-title-row"><div class="chart-title">[지니] 시간당 재생 증가 · 발매 후 48시간</div><div class="chart-legend"><span class="lg-chip tt"><span class="lg-dot" style="background:#ff7ab6"></span>떠나가요</span><span class="lg-chip wd"><span class="lg-dot" style="background:#6ea8fe"></span>이 사랑</span></div></div>
 <svg viewBox="0 0 920 300" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" role="img">
 <defs>
 <linearGradient id="gtt-_play_delta-hour" x1="0" x2="0" y1="0" y2="1">
@@ -592,7 +599,7 @@ tbody tr:hover td.wd-side{background:linear-gradient(270deg,rgba(110,168,254,.08
 </div></section>
 <section class="section">
 <div class="section-h">
-  <h2 class="section-title"><span class="sec-no">04</span>떠나가요 28일 일별 증가분 <span class="em">(멜론)</span></h2>
+  <h2 class="section-title"><span class="sec-no">04</span>떠나가요 28일 일별 증가분 <span class="src-chip src-melon"><img class="src-chip-fav" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABDklEQVQ4jaXTvUoDQRQF4G9FUogPIGJtJSKLWIgrIlY+QvAxrERCsLCwEB9C8ggWKSyybVhELKxERHwACxEJjsVOJG7iT8yF4c6cuedwz1wmCSEkJoipScgw/dfCpMhmcYE1NEKan4zbwS42UEOzD44jcIXXuO/0wSELSZHNoIE6FvCEFo6wFFf7s35wCpHcQTqig2tshjR/HgSrFg4GyDc4RTeel3FYVa0K1GO+xWpI832sK/3D3m8C8zF3Qpq/QUjzHi4jPpcU2RdOVeAh5q34HpIiq2E74o8hzd9/EjiPeRHdpMjOUGAl4q2qhVFTaCt9V6NQTuHl2w7i5Y5y5nfo4R7Ho8hDHfwnJv6NH+GGTX99Ri3kAAAAAElFTkSuQmCC" alt=""><span class="src-chip-txt">멜론</span></span> <span style="font-size:11.5px;color:var(--muted);font-weight:600;margin-left:4px">최신순</span></h2>
   <span class="section-sub">이 사랑은 발매 직후 · 같은 D+N 칼럼이 채워지면 나란히 표시 예정</span>
 </div>
 <div class="tbl-wrap"><table>
@@ -912,7 +919,7 @@ tbody tr:hover td.wd-side{background:linear-gradient(270deg,rgba(110,168,254,.08
 </tbody></table></div></section>
 <section class="section">
 <div class="section-h">
-  <h2 class="section-title"><span class="sec-no">05</span>유튜브 누적 조회수</h2>
+  <h2 class="section-title"><span class="sec-no">05</span>유튜브 누적 조회수 <span class="src-chip src-youtube"><img class="src-chip-fav" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAMAAACdt4HsAAAATlBMVEVHcEz/ADP/ADP/ADP/ADP/ADP/ADP/ADP/ADP/ADP/ADP/ADP/ADP/ADP/ADP/ADP/////EUb/ACL/RGP/7/P/q7n/hpn/zNX/3eP/Z34pvHLoAAAAD3RSTlMA6zaWxYZkrPTcSyF7D/rE87ViAAABdklEQVRYhe2W226DMAyGnaMJhCTtKLTv/6ILXYXQWicZvtkFv4SEhPwp+JQf4NSpf6VhkL21RiFq7ZwQIoS4KQQhnHNaIypjbS+H4Ve4Ryd2AbTC8wnCod+Fm5bQdxlm/EY4HP8ijMfjY2QeIMY1k5oRH3Suv+OcwA0gm8pPSUjoOfEx9mB5AEsX4dIEMKBIwPJ1rQMUIAlI6VZHIN0GGZCm+VpBaCDbYAVkxKMMcDVASkssHcKBqAFyKi40QkBXB6Q7nYoOSPYOkBEPitAIWP+DCUjL5zO0AshyAjnNewDdUKGpCoWW7hr6oDhUotqJ01zpxOIwpelWmSZdBtRXgi7tg3vDRsHCRpoLM7RJgSe/NYSvVxNvKwcLkgWIEiTZii3KN9PIuhv1yLudcxWBdzn2q8NgJKF7eqTjaezkj8s6/BP95lLxgMsIuHer0qImV8u7hEYrPxnmMRvm7Ji9N0apbJtfyu/KGO+zS842efy7ET91qqZvZj+d0TOLUpwAAAAASUVORK5CYII=" alt=""><span class="src-chip-txt">유튜브</span></span></h2>
   <span class="section-sub">떠나가요 검색 결과 상위 영상 · 이 사랑은 D+1 별도 수집 예정</span>
 </div>
 <div class="delta-grid" style="grid-template-columns:repeat(3,1fr);gap:14px">
@@ -958,7 +965,7 @@ tbody tr:hover td.wd-side{background:linear-gradient(270deg,rgba(110,168,254,.08
 <footer class="foot">
 <div class="row">
 <div><b>산식</b> · 매시간 1시간 동안 늘어난 청취자/재생 증가분 직접 매칭 · 시간배수 = 시간 재생 증가 ÷ 시간 청취자 증가</div>
-<div><b>BUILD</b> · 2026-05-25 12:49:40 KST</div>
+<div><b>BUILD</b> · 2026-05-25 13:01:12 KST</div>
 </div>
 <div class="row" style="margin-top:6px">
 <div><b>SOURCES</b> · 멜론 일간/스트리밍 카드 · 지니 실시간 차트 · 유튜브 검색 API · 매시간 자동 빌드 → GitHub 자동 배포</div>
